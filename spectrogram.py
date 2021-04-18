@@ -24,8 +24,8 @@ for f in os.listdir(DIR):
 
         # Plot spectrogram using color map
         plt.pcolormesh(times, freqs, spec, cmap="inferno", vmin=0, vmax=1000)
-        plt.xlabel("Time")
-        plt.ylabel("Frequency")
+        plt.xlabel("Time (s)")
+        plt.ylabel("Frequency (Hz)")
         plt.ylim([0, 5000])
 
         # Annotate spectogram plot with key labels

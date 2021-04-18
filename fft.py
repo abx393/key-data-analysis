@@ -49,7 +49,7 @@ for f in os.listdir(DIR):
             plt.ylim(bottom=0)
             plt.title("key = {}, time = {} ms".format(label, timestamp))
             plt.xlabel("Frequency (Hz)")
-            plt.ylabel("Magnitude")
+            plt.ylabel("Amplitude")
             plt.show()
 
         labels_file.close()

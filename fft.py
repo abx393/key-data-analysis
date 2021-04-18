@@ -5,7 +5,7 @@ from scipy.io import wavfile
 from matplotlib import pyplot as plt
 from json import JSONDecoder
 
-DIR = "raw_data/"
+DIR = "raw_data"
 offset = 10000
 
 for f in os.listdir(DIR):
@@ -44,7 +44,9 @@ for f in os.listdir(DIR):
             magnitude = magnitude[: n//2]
 
             plt.plot(freq, magnitude)
-            plt.axis([0, 10000, 0, 200000])
+            # plt.axis([0, 10000, 0, 300000])
+            plt.xlim([0, 5000])
+            plt.ylim(bottom=0)
             plt.title("key = {}, time = {} ms".format(label, timestamp))
             plt.xlabel("Frequency (Hz)")
             plt.ylabel("Magnitude")

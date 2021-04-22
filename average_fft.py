@@ -11,7 +11,7 @@ from json import JSONDecoder
 
 DIR_IN = "raw_data"
 DIR_OUT = "plots/average_fft"
-KEYBOARD_TYPE = "membrane"
+KEYBOARD_TYPE = "mechanical"
 
 offset = 10000
 

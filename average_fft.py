@@ -13,7 +13,7 @@ DIR_IN = "raw_data"
 DIR_OUT = "plots/average_fft"
 KEYBOARD_TYPE = "mechanical"
 
-offset = 20000
+offset = 10000
 
 avg_fft = {}
 key_count = {}
@@ -44,32 +44,20 @@ for f in os.listdir(os.path.join(DIR_IN, KEYBOARD_TYPE)):
             n = sample_end - sample_start
 
             freq = np.fft.fftfreq(n, 1 / sample_rate)
-            ampltitude = np.fft.fft(samples[sample_start : sample_end])
+            amplitude = np.fft.fft(samples[sample_start : sample_end])
 
             # only look at positive frequencies
             freq = freq[: n//2]
-            ampltitude = ampltitude[: n//2]
+            amplitude = amplitude[: n//2]
+            print("freq.shape ", freq.shape)
+            print("amplitude.shape ", amplitude.shape)
+            for i in range(10):
+                print("freq[i] ", freq[i])
+                print("ampl[i] ", amplitude[i])
 
             # Store fft's by key
-            if label not in avg_fft:
-                avg_fft[label] = ampltitude
-                key_count[label] = 1
-            else:
-                print("before avg_fft[label] ", avg_fft[label])
-                avg_fft[label] += ampltitude
-                print("after avg_fft[label] ", avg_fft[label])
-                key_count[label] += 1
-
-            """
-            plt.plot(freq, ampltitude)
-            # plt.axis([0, 10000, 0, 300000])
-            plt.xlim([0, 5000])
-            plt.ylim(bottom=0)
-            plt.title("key = {}, time = {} ms".format(label, timestamp))
-            plt.xlabel("Frequency (Hz)")
-            plt.ylabel("Amplitude")
-            plt.show()
-            """
+            avg_fft[label] = avg_fft.get(label, np.zeros(amplitude.shape[0])) + amplitude
+            key_count[label] = key_count.get(label, 0) + 1
 
         labels_file.close()
 
@@ -78,21 +66,19 @@ print("key_count " + str(key_count))
 
 fs = 48000
 for key in avg_fft:
-    # print("key ", key)
     amplitude = avg_fft[key]
-    # print("amplitude ", amplitude)
 
     # Normalize by total number of data points for this key
-    # ampltitude /= key_count[key]
+    amplitude /= key_count[key]
 
     freq = np.fft.fftfreq(offset * 2, 1 / fs)[: offset]
 
     # Plot the average fft for this key
     plt.clf()
-    plt.plot(freq, ampltitude)
+    plt.plot(freq, amplitude)
     plt.xlim([0, 5000])
     plt.ylim(bottom=0)
-    plt.title("Average FFT for key = {}".format(key))
+    plt.title("Average FFT for key = {} ({} data points), keyboard = {}".format(key, key_count[key], KEYBOARD_TYPE))
     plt.xlabel("Frequency (Hz)")
     plt.ylabel("Amplitude")
     plt.savefig(os.path.join(DIR_OUT, key + ".jpg"))

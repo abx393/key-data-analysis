@@ -11,7 +11,7 @@ from json import JSONDecoder
 
 DIR_IN = "raw_data"
 DIR_OUT = "plots/fft"
-KEYBOARD_TYPE = "membrane"
+KEYBOARD_TYPE = "mechanical"
 
 offset = 20000
 
@@ -57,7 +57,7 @@ for f in os.listdir(os.path.join(DIR_IN, KEYBOARD_TYPE)):
             plt.title("key = {}, time = {} ms, keyboard = {}".format(label, timestamp, KEYBOARD_TYPE))
             plt.xlabel("Frequency (Hz)")
             plt.ylabel("Amplitude")
-            plt.savefig(os.path.join(DIR_OUT, basename + ".jpg"))
+            plt.savefig(os.path.join(DIR_OUT, basename + "_" + label + ".jpg"))
             plt.show()
 
         labels_file.close()

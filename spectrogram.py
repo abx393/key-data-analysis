@@ -9,19 +9,20 @@ from scipy.signal import spectrogram
 from matplotlib import pyplot as plt
 from json import JSONDecoder
 
-DIR = "raw_data"
-KEYBOARD_TYPE = "mechanical"
+DIR_IN = "raw_data"
+DIR_OUT = "plots/spectrograms"
+KEYBOARD_TYPE = "membrane"
 
-for f in os.listdir(os.path.join(DIR, KEYBOARD_TYPE)):
+for f in os.listdir(os.path.join(DIR_IN, KEYBOARD_TYPE)):
     print(f)
     (basename, extension) = f.split(".")
 
     # If it's a wav file, process it
     if extension == "wav":
-        sample_rate, samples = wavfile.read(os.path.join(DIR, KEYBOARD_TYPE, f))
+        sample_rate, samples = wavfile.read(os.path.join(DIR_IN, KEYBOARD_TYPE, f))
 
         # Get corresponding ground truth JSON file
-        labels_file = open(os.path.join(DIR, KEYBOARD_TYPE, basename + ".json"))
+        labels_file = open(os.path.join(DIR_IN, KEYBOARD_TYPE, basename + ".json"))
         labels = JSONDecoder().decode(labels_file.read())
 
         # Compute spectrogram
@@ -40,4 +41,6 @@ for f in os.listdir(os.path.join(DIR, KEYBOARD_TYPE)):
             label = labels[timestamp]
             timestamp = int(timestamp)
             ax.text(timestamp / 1000, 2300, label, color="white")
+
+        plt.savefig(os.path.join(DIR_OUT, basename + ".jpg"))
         plt.show()

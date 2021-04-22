@@ -9,23 +9,25 @@ from scipy.io import wavfile
 from matplotlib import pyplot as plt
 from json import JSONDecoder
 
-DIR = "raw_data"
+DIR_IN = "raw_data"
+DIR_OUT = "plots/average_fft"
 KEYBOARD_TYPE = "mechanical"
+
 offset = 20000
 
 avg_fft = {}
 key_count = {}
 
-for f in os.listdir(os.path.join(DIR, KEYBOARD_TYPE)):
+for f in os.listdir(os.path.join(DIR_IN, KEYBOARD_TYPE)):
     print(f)
     (basename, extension) = f.split(".")
 
     # If it's a wav file, generate fft plot
     if extension == "wav":
-        sample_rate, samples = wavfile.read(os.path.join(DIR, KEYBOARD_TYPE, f))
+        sample_rate, samples = wavfile.read(os.path.join(DIR_IN, KEYBOARD_TYPE, f))
 
         # Get corresponding ground truth JSON file
-        labels_file = open(os.path.join(DIR, KEYBOARD_TYPE, basename + ".json"))
+        labels_file = open(os.path.join(DIR_IN, KEYBOARD_TYPE, basename + ".json"))
         labels = JSONDecoder().decode(labels_file.read())
         for timestamp in labels:
             # the key that was pressed
@@ -90,9 +92,10 @@ for key in avg_fft:
     plt.plot(freq, ampltitude)
     plt.xlim([0, 5000])
     plt.ylim(bottom=0)
-    plt.title("key = {}".format(key))
+    plt.title("Average FFT for key = {}".format(key))
     plt.xlabel("Frequency (Hz)")
     plt.ylabel("Amplitude")
+    plt.savefig(os.path.join(DIR_OUT, key + ".jpg"))
     plt.show()
 
 

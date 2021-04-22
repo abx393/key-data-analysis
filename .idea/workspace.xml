@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="824f000d-f08e-4424-9042-b6321c66a2b8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/average_fft.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/average_fft.py" beforeDir="false" afterPath="$PROJECT_DIR$/average_fft.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fft.py" beforeDir="false" afterPath="$PROJECT_DIR$/fft.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spectrogram.py" beforeDir="false" afterPath="$PROJECT_DIR$/spectrogram.py" afterDir="false" />
     </list>
@@ -39,10 +39,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\aband\PycharmProjects\key-data-analysis\raw_data\mechanical" />
       <recent name="C:\Users\aband\PycharmProjects\key-data-analysis\raw_data" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.average_fft">
+  <component name="RunManager" selected="Python.spectrogram">
     <configuration name="average_fft" type="PythonConfigurationType" factoryName="Python">
       <module name="key-data-analysis" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -128,7 +129,7 @@
       <workItem from="1618338613813" duration="5225000" />
       <workItem from="1618512262271" duration="2173000" />
       <workItem from="1618687758537" duration="13272000" />
-      <workItem from="1619051326947" duration="5737000" />
+      <workItem from="1619051326947" duration="7897000" />
     </task>
     <servers />
   </component>
@@ -146,26 +147,26 @@
     </state>
     <state x="658" y="244" key="FileChooserDialogImpl/0.0.1707.920@0.0.1707.920" timestamp="1618706636703" />
     <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1707.920@0.0.1920.1040" timestamp="1619054374855" />
-    <state width="1719" height="334" key="GridCell.Tab.0.bottom" timestamp="1619057251585">
+    <state width="1718" height="334" key="GridCell.Tab.0.bottom" timestamp="1619062328808">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="801" height="183" key="GridCell.Tab.0.bottom/0.0.1707.920@0.0.1707.920" timestamp="1618712557810" />
-    <state width="1719" height="334" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1707.920@0.0.1920.1040" timestamp="1619057251585" />
-    <state width="1719" height="334" key="GridCell.Tab.0.center" timestamp="1619057251585">
+    <state width="1718" height="334" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1707.920@0.0.1920.1040" timestamp="1619062328808" />
+    <state width="1718" height="334" key="GridCell.Tab.0.center" timestamp="1619062328808">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="801" height="183" key="GridCell.Tab.0.center/0.0.1707.920@0.0.1707.920" timestamp="1618712557810" />
-    <state width="1719" height="334" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1707.920@0.0.1920.1040" timestamp="1619057251585" />
-    <state width="1719" height="334" key="GridCell.Tab.0.left" timestamp="1619057251585">
+    <state width="1718" height="334" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1707.920@0.0.1920.1040" timestamp="1619062328808" />
+    <state width="1718" height="334" key="GridCell.Tab.0.left" timestamp="1619062328807">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="801" height="183" key="GridCell.Tab.0.left/0.0.1707.920@0.0.1707.920" timestamp="1618712557810" />
-    <state width="1719" height="334" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1707.920@0.0.1920.1040" timestamp="1619057251585" />
-    <state width="1719" height="334" key="GridCell.Tab.0.right" timestamp="1619057251585">
+    <state width="1718" height="334" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1707.920@0.0.1920.1040" timestamp="1619062328807" />
+    <state width="1718" height="334" key="GridCell.Tab.0.right" timestamp="1619062328808">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="801" height="183" key="GridCell.Tab.0.right/0.0.1707.920@0.0.1707.920" timestamp="1618712557810" />
-    <state width="1719" height="334" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1707.920@0.0.1920.1040" timestamp="1619057251585" />
+    <state width="1718" height="334" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1707.920@0.0.1920.1040" timestamp="1619062328808" />
     <state x="461" y="163" key="SettingsEditor" timestamp="1619054345790">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -181,8 +182,8 @@
     <state x="516" y="196" width="670" height="58" key="search.everywhere.popup/0.0.1707.920@0.0.1707.920" timestamp="1618704919260" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/key_data_analysis$average_fft.coverage" NAME="average_fft Coverage Results" MODIFIED="1619057251577" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/key_data_analysis$fft.coverage" NAME="fft Coverage Results" MODIFIED="1619057220870" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/key_data_analysis$spectrogram.coverage" NAME="spectrogram Coverage Results" MODIFIED="1619054159441" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/key_data_analysis$average_fft.coverage" NAME="average_fft Coverage Results" MODIFIED="1619061606702" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/key_data_analysis$fft.coverage" NAME="fft Coverage Results" MODIFIED="1619062169305" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/key_data_analysis$spectrogram.coverage" NAME="spectrogram Coverage Results" MODIFIED="1619062328800" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

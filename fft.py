@@ -9,20 +9,22 @@ from scipy.io import wavfile
 from matplotlib import pyplot as plt
 from json import JSONDecoder
 
-DIR = "raw_data"
-KEYBOARD_TYPE = "mechanical"
+DIR_IN = "raw_data"
+DIR_OUT = "plots/fft"
+KEYBOARD_TYPE = "membrane"
+
 offset = 20000
 
-for f in os.listdir(os.path.join(DIR, KEYBOARD_TYPE)):
+for f in os.listdir(os.path.join(DIR_IN, KEYBOARD_TYPE)):
     print(f)
     (basename, extension) = f.split(".")
 
     # If it's a wav file, generate fft plot
     if extension == "wav":
-        sample_rate, samples = wavfile.read(os.path.join(DIR, KEYBOARD_TYPE, f))
+        sample_rate, samples = wavfile.read(os.path.join(DIR_IN, KEYBOARD_TYPE, f))
 
         # Get corresponding ground truth JSON file
-        labels_file = open(os.path.join(DIR, KEYBOARD_TYPE, basename + ".json"))
+        labels_file = open(os.path.join(DIR_IN, KEYBOARD_TYPE, basename + ".json"))
         labels = JSONDecoder().decode(labels_file.read())
         for timestamp in labels:
             # the key that was pressed
@@ -55,6 +57,7 @@ for f in os.listdir(os.path.join(DIR, KEYBOARD_TYPE)):
             plt.title("key = {}, time = {} ms, keyboard = {}".format(label, timestamp, KEYBOARD_TYPE))
             plt.xlabel("Frequency (Hz)")
             plt.ylabel("Amplitude")
+            plt.savefig(os.path.join(DIR_OUT, basename + ".jpg"))
             plt.show()
 
         labels_file.close()

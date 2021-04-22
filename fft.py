@@ -11,9 +11,9 @@ from json import JSONDecoder
 
 DIR_IN = "raw_data"
 DIR_OUT = "plots/fft"
-KEYBOARD_TYPE = "mechanical"
+KEYBOARD_TYPE = "membrane"
 
-offset = 20000
+offset = 10000
 
 for f in os.listdir(os.path.join(DIR_IN, KEYBOARD_TYPE)):
     print(f)

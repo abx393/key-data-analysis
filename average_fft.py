@@ -1,5 +1,5 @@
 """
-Computes the average Fourier Transform for each key.
+Computes and plots the average Fourier Transform for each key.
 """
 
 import os
@@ -11,7 +11,7 @@ from json import JSONDecoder
 
 DIR_IN = "raw_data"
 DIR_OUT = "plots/average_fft"
-KEYBOARD_TYPE = "mechanical"
+KEYBOARD_TYPE = "membrane"
 
 offset = 10000
 
@@ -49,11 +49,6 @@ for f in os.listdir(os.path.join(DIR_IN, KEYBOARD_TYPE)):
             # only look at positive frequencies
             freq = freq[: n//2]
             amplitude = amplitude[: n//2]
-            print("freq.shape ", freq.shape)
-            print("amplitude.shape ", amplitude.shape)
-            for i in range(10):
-                print("freq[i] ", freq[i])
-                print("ampl[i] ", amplitude[i])
 
             # Store fft's by key
             avg_fft[label] = avg_fft.get(label, np.zeros(amplitude.shape[0])) + amplitude
@@ -61,8 +56,6 @@ for f in os.listdir(os.path.join(DIR_IN, KEYBOARD_TYPE)):
 
         labels_file.close()
 
-print("key_count " + str(key_count))
-# print("avg_fft " + average_fft)
 
 fs = 48000
 for key in avg_fft:
@@ -83,5 +76,3 @@ for key in avg_fft:
     plt.ylabel("Amplitude")
     plt.savefig(os.path.join(DIR_OUT, key + ".jpg"))
     plt.show()
-
-

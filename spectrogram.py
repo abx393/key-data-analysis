@@ -11,7 +11,7 @@ from json import JSONDecoder
 
 DIR_IN = "raw_data"
 DIR_OUT = "plots/spectrograms"
-KEYBOARD_TYPE = "mechanical"
+KEYBOARD_TYPE = "membrane"
 
 for f in os.listdir(os.path.join(DIR_IN, KEYBOARD_TYPE)):
     print(f)

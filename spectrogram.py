@@ -11,7 +11,7 @@ from json import JSONDecoder
 
 DIR_IN = "raw_data"
 DIR_OUT = "plots/spectrograms"
-KEYBOARD_TYPE = "membrane"
+KEYBOARD_TYPE = "mechanical"
 
 for f in os.listdir(os.path.join(DIR_IN, KEYBOARD_TYPE)):
     print(f)
@@ -30,7 +30,7 @@ for f in os.listdir(os.path.join(DIR_IN, KEYBOARD_TYPE)):
 
         # Plot spectrogram using color map
         plt.pcolormesh(times, freqs, spec, vmin=0, vmax=1000)
-        plt.title("Keyboard = " + KEYBOARD_TYPE)
+        plt.title("timestamp = {}, Keyboard = {}".format(basename, KEYBOARD_TYPE))
         plt.xlabel("Time (s)")
         plt.ylabel("Frequency (Hz)")
         plt.ylim([0, 5000])

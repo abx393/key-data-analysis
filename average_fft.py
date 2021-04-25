@@ -50,6 +50,9 @@ for f in os.listdir(os.path.join(DIR_IN, KEYBOARD_TYPE)):
             freq = freq[: n//2]
             amplitude = amplitude[: n//2]
 
+            # Normalize amplitude
+            amplitude /= max(amplitude)
+
             # Store fft's by key
             avg_fft[label] = avg_fft.get(label, np.zeros(amplitude.shape[0])) + amplitude
             key_count[label] = key_count.get(label, 0) + 1
@@ -73,6 +76,6 @@ for key in avg_fft:
     plt.ylim(bottom=0)
     plt.title("Average FFT for key = {} ({} data points), keyboard = {}".format(key, key_count[key], KEYBOARD_TYPE))
     plt.xlabel("Frequency (Hz)")
-    plt.ylabel("Amplitude")
+    plt.ylabel("Normalized Amplitude")
     plt.savefig(os.path.join(DIR_OUT, key + ".jpg"))
     plt.show()

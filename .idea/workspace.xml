@@ -2,13 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="824f000d-f08e-4424-9042-b6321c66a2b8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/features/peaks.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fft_peak_analysis.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spectrogram.py" beforeDir="false" afterPath="$PROJECT_DIR$/spectrogram.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -32,7 +47,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/average_fft.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/fft_peak_analysis.py" />
     <property name="settings.editor.selected.configurable" value="configurable.group.project" />
   </component>
   <component name="RecentsManager">
@@ -42,7 +57,7 @@
       <recent name="C:\Users\aband\PycharmProjects\key-data-analysis\raw_data" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.average_fft">
+  <component name="RunManager" selected="Python.fft_peak_analysis">
     <configuration name="average_fft" type="PythonConfigurationType" factoryName="Python">
       <module name="key-data-analysis" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -87,6 +102,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="fft_peak_analysis" type="PythonConfigurationType" factoryName="Python">
+      <module name="key-data-analysis" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\aband\PycharmProjects\key-data-analysis\venv\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/fft_peak_analysis.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="spectrogram" type="PythonConfigurationType" factoryName="Python">
       <module name="key-data-analysis" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -113,6 +150,7 @@
       <item itemvalue="Python.fft" />
       <item itemvalue="Python.spectrogram" />
       <item itemvalue="Python.average_fft" />
+      <item itemvalue="Python.fft_peak_analysis" />
     </list>
   </component>
   <component name="SvnConfiguration">
@@ -129,7 +167,7 @@
       <workItem from="1618512262271" duration="2173000" />
       <workItem from="1618687758537" duration="13272000" />
       <workItem from="1619051326947" duration="14539000" />
-      <workItem from="1619385129460" duration="4577000" />
+      <workItem from="1619385129460" duration="8931000" />
     </task>
     <servers />
   </component>
@@ -137,41 +175,41 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="414" y="176" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1619054382002">
+    <state x="414" y="176" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1619394433681">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="368" y="156" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1707.920@0.0.1707.920" timestamp="1618706638431" />
-    <state x="414" y="176" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.0.1707.920@0.0.1920.1040" timestamp="1619054382002" />
-    <state x="740" y="276" key="FileChooserDialogImpl" timestamp="1619054374855">
+    <state x="414" y="176" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.0.1707.920@0.0.1920.1040" timestamp="1619394433681" />
+    <state x="740" y="276" key="FileChooserDialogImpl" timestamp="1619394431839">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="658" y="244" key="FileChooserDialogImpl/0.0.1707.920@0.0.1707.920" timestamp="1618706636703" />
-    <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1707.920@0.0.1920.1040" timestamp="1619054374855" />
-    <state width="1877" height="216" key="GridCell.Tab.0.bottom" timestamp="1619390062919">
+    <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1707.920@0.0.1920.1040" timestamp="1619394431839" />
+    <state width="1877" height="324" key="GridCell.Tab.0.bottom" timestamp="1619396423538">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1664" height="216" key="GridCell.Tab.0.bottom/0.0.1707.920@0.0.1707.920" timestamp="1619389581030" />
-    <state width="1877" height="216" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1707.920@0.0.1920.1040" timestamp="1619390062919" />
-    <state width="1877" height="216" key="GridCell.Tab.0.center" timestamp="1619390062919">
+    <state width="1877" height="324" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1707.920@0.0.1920.1040" timestamp="1619396423538" />
+    <state width="1877" height="324" key="GridCell.Tab.0.center" timestamp="1619396423538">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1664" height="216" key="GridCell.Tab.0.center/0.0.1707.920@0.0.1707.920" timestamp="1619389581030" />
-    <state width="1877" height="216" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1707.920@0.0.1920.1040" timestamp="1619390062919" />
-    <state width="1877" height="216" key="GridCell.Tab.0.left" timestamp="1619390062919">
+    <state width="1877" height="324" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1707.920@0.0.1920.1040" timestamp="1619396423538" />
+    <state width="1877" height="324" key="GridCell.Tab.0.left" timestamp="1619396423538">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1664" height="216" key="GridCell.Tab.0.left/0.0.1707.920@0.0.1707.920" timestamp="1619389581030" />
-    <state width="1877" height="216" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1707.920@0.0.1920.1040" timestamp="1619390062919" />
-    <state width="1877" height="216" key="GridCell.Tab.0.right" timestamp="1619390062919">
+    <state width="1877" height="324" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1707.920@0.0.1920.1040" timestamp="1619396423538" />
+    <state width="1877" height="324" key="GridCell.Tab.0.right" timestamp="1619396423538">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1664" height="216" key="GridCell.Tab.0.right/0.0.1707.920@0.0.1707.920" timestamp="1619389581030" />
-    <state width="1877" height="216" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1707.920@0.0.1920.1040" timestamp="1619390062919" />
-    <state x="461" y="163" key="SettingsEditor" timestamp="1619054345790">
+    <state width="1877" height="324" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1707.920@0.0.1920.1040" timestamp="1619396423538" />
+    <state x="461" y="163" key="SettingsEditor" timestamp="1619394409696">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="410" y="144" key="SettingsEditor/0.0.1707.920@0.0.1707.920" timestamp="1618706612673" />
-    <state x="461" y="163" key="SettingsEditor/0.0.1920.1040/1920.0.1707.920@0.0.1920.1040" timestamp="1619054345790" />
+    <state x="461" y="163" key="SettingsEditor/0.0.1920.1040/1920.0.1707.920@0.0.1920.1040" timestamp="1619394409696" />
     <state x="656" y="345" width="607" height="345" key="com.intellij.ide.util.TipDialog" timestamp="1619385129166">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -182,8 +220,9 @@
     <state x="516" y="196" width="670" height="58" key="search.everywhere.popup/0.0.1707.920@0.0.1707.920" timestamp="1618704919260" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/key_data_analysis$average_fft.coverage" NAME="average_fft Coverage Results" MODIFIED="1619389581009" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/key_data_analysis$average_fft.coverage" NAME="average_fft Coverage Results" MODIFIED="1619392023802" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/key_data_analysis$fft.coverage" NAME="fft Coverage Results" MODIFIED="1619112381706" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/key_data_analysis$spectrogram.coverage" NAME="spectrogram Coverage Results" MODIFIED="1619389389631" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/key_data_analysis$fft_peak_analysis.coverage" NAME="fft_peak_analysis Coverage Results" MODIFIED="1619396423530" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

@@ -70,7 +70,7 @@ for f in os.listdir(os.path.join(DIR_IN, KEYBOARD_TYPE)):
             # Save peak data to output file
             peaks_file.write(label)
             for i in range(num_peaks):
-                peaks_file.write(",{}".format(np.round(peak_freq[i], decimals=2)))
+                peaks_file.write(",{}".format(np.round(peak_freq[i])))
             peaks_file.write("\n")
 
             # Plot fft
@@ -83,3 +83,5 @@ for f in os.listdir(os.path.join(DIR_IN, KEYBOARD_TYPE)):
             plt.show()
 
         labels_file.close()
+
+peaks_file.close()

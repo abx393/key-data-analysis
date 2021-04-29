@@ -13,9 +13,10 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, recall_score, precision_score, f1_score
 
 dir_in = "features"
+keyboard_type = "mechanical"
 model = "KNN"
 
-df = pd.read_csv(os.path.join(dir_in, "peaks.csv"))
+df = pd.read_csv(os.path.join(dir_in, keyboard_type, "peaks.csv"))
 
 # Every column except the 0th column is an input feature
 x = np.array(df.iloc[:, 1:])

@@ -1,14 +1,21 @@
+"""
+Draw a 3D plot of peaks
+ie., x-axis = peak1, y-axis = peak2, z-axis = peak3
+"""
+
+import os
 import numpy as np
 import pandas as pd
 
 from mpl_toolkits import mplot3d
 import matplotlib.pyplot as plt
 
-PATH_IN = "features/peaks.csv"
+DIR_IN = "features"
+KEYBOARD_TYPE = "mechanical"
 
-df = pd.read_csv(PATH_IN)
+df = pd.read_csv(os.path.join(DIR_IN, KEYBOARD_TYPE, "peaks.csv"))
 keys = set(np.array(df.key))
-keys = ["a", "Space", "Backspace"]
+keys = ["a", "b", "c"]
 
 df.set_index("key", inplace=True)
 

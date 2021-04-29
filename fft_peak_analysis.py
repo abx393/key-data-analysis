@@ -11,7 +11,7 @@ from json import JSONDecoder
 
 DIR_IN = "raw_data"
 DIR_OUT = "features"
-KEYBOARD_TYPE = "mechanical"
+KEYBOARD_TYPE = "membrane"
 
 # 2 * offset = n (length of FFT)
 offset = 5000
@@ -22,7 +22,7 @@ subset_labels = ["a", "Space", "Backspace"]
 cnt_labels = {}
 
 # Output file
-peaks_file = open(os.path.join(DIR_OUT, "peaks.csv"), "w")
+peaks_file = open(os.path.join(DIR_OUT, KEYBOARD_TYPE, "peaks.csv"), "w")
 cols = "key"
 for i in range(num_peaks):
     cols += ",peak_{}".format((i+1))
@@ -82,7 +82,7 @@ for f in os.listdir(os.path.join(DIR_IN, KEYBOARD_TYPE)):
 
             # Plot fft
             plt.plot(freq, magnitude)
-            plt.xlim([0, 2000])
+            plt.xlim([0, 10000])
             plt.ylim(bottom=0)
             plt.title("key = {}, time = {} ms, keyboard = {}".format(label, timestamp, KEYBOARD_TYPE))
             plt.xlabel("Frequency (Hz)")

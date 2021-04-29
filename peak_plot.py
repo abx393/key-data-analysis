@@ -8,11 +8,12 @@ PATH_IN = "features/peaks.csv"
 
 df = pd.read_csv(PATH_IN)
 keys = set(np.array(df.key))
-keys = ["a", "b", "c"]
+keys = ["a", "Space", "Backspace"]
 
 df.set_index("key", inplace=True)
 
 ax = plt.axes(projection='3d')
+legend = []
 for key in keys:
     peak1 = np.array(df.loc[key, "peak_1"])
     peak2 = np.array(df.loc[key, "peak_2"])
@@ -22,6 +23,7 @@ for key in keys:
     plt.xlabel("peak1")
     plt.ylabel("peak2")
     #plt.zlabel("peak3")
-    plt.legend(["key={}".format(key)])
+    legend.append("key={}".format(key))
 
+plt.legend(legend)
 plt.show()

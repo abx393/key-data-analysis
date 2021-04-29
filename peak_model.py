@@ -13,7 +13,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, recall_score, precision_score, f1_score
 
 dir_in = "features"
-model = "LR"
+model = "KNN"
 
 df = pd.read_csv(os.path.join(dir_in, "peaks.csv"))
 
@@ -27,7 +27,7 @@ y = np.array(df["key"])
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2)
 
 if model == "KNN":
-    clf = KNeighborsClassifier(n_neighbors=10, weights='distance')
+    clf = KNeighborsClassifier(n_neighbors=7, weights='distance')
 elif model == "SVM":
     clf = SVC()
 elif model == "LR":

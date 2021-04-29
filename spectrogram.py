@@ -14,7 +14,6 @@ DIR_OUT = "plots/spectrograms"
 KEYBOARD_TYPE = "mechanical"
 
 for f in os.listdir(os.path.join(DIR_IN, KEYBOARD_TYPE)):
-    print(f)
     (basename, extension) = f.split(".")
 
     # If it's a wav file, process it
@@ -33,7 +32,7 @@ for f in os.listdir(os.path.join(DIR_IN, KEYBOARD_TYPE)):
         plt.title("timestamp = {}, Keyboard = {}".format(basename, KEYBOARD_TYPE))
         plt.xlabel("Time (s)")
         plt.ylabel("Frequency (Hz)")
-        plt.ylim([0, 5000])
+        plt.ylim([0, 3000])
 
         # Annotate spectogram plot with key labels
         ax = plt.gca()

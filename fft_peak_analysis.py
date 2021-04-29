@@ -14,9 +14,12 @@ DIR_OUT = "features"
 KEYBOARD_TYPE = "mechanical"
 
 # 2 * offset = n (length of FFT)
-offset = 10000
+offset = 5000
 
-num_peaks = 7
+num_peaks = 4
+
+subset_labels = ["a", "Space", "Backspace"]
+cnt_labels = {}
 
 # Output file
 peaks_file = open(os.path.join(DIR_OUT, "peaks.csv"), "w")
@@ -26,8 +29,9 @@ for i in range(num_peaks):
 cols += "\n"
 peaks_file.write(cols)
 
+cnt = 0
+
 for f in os.listdir(os.path.join(DIR_IN, KEYBOARD_TYPE)):
-    print(f)
     (basename, extension) = f.split(".")
 
     # If it's a wav file, generate fft plot
@@ -40,6 +44,9 @@ for f in os.listdir(os.path.join(DIR_IN, KEYBOARD_TYPE)):
         for timestamp in labels:
             # the key that was pressed
             label = labels[timestamp]
+            # if label not in subset_labels:
+                # continue
+            cnt_labels[label] = cnt_labels.get(label, 0) + 1
             print("label ", label)
 
             # timestamp is milliseconds since start of audio
@@ -60,7 +67,7 @@ for f in os.listdir(os.path.join(DIR_IN, KEYBOARD_TYPE)):
             magnitude = magnitude[: n // 2]
 
             # Find the k highest peaks
-            peak_freq = freq[np.argpartition(magnitude, num_peaks)[: num_peaks]]
+            peak_freq = freq[np.argpartition(-magnitude, num_peaks)[: num_peaks]]
 
             # Sort the peaks in descending order
             peak_freq = -np.sort(-peak_freq)
@@ -75,13 +82,16 @@ for f in os.listdir(os.path.join(DIR_IN, KEYBOARD_TYPE)):
 
             # Plot fft
             plt.plot(freq, magnitude)
-            plt.xlim([0, 5000])
+            plt.xlim([0, 2000])
             plt.ylim(bottom=0)
             plt.title("key = {}, time = {} ms, keyboard = {}".format(label, timestamp, KEYBOARD_TYPE))
             plt.xlabel("Frequency (Hz)")
             plt.ylabel("Amplitude")
-            plt.show()
+            if cnt < 6:
+                plt.show()
+            cnt += 1
 
         labels_file.close()
 
+print("cnt_labels ", cnt_labels)
 peaks_file.close()

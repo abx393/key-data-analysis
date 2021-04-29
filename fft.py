@@ -32,13 +32,10 @@ for f in os.listdir(os.path.join(DIR_IN, KEYBOARD_TYPE)):
 
             # timestamp is milliseconds since start of audio
             timestamp = int(timestamp)
-            print("timestamp ", timestamp)
 
             # Get the range of samples associated with the current key press
             sample_start = timestamp * sample_rate // 1000 - offset
             sample_end = timestamp * sample_rate // 1000 + offset
-            print("sample_start ", sample_start)
-            print("sample_end ", sample_end)
 
             # number of time samples or number of frequency bins
             n = sample_end - sample_start
@@ -52,7 +49,7 @@ for f in os.listdir(os.path.join(DIR_IN, KEYBOARD_TYPE)):
 
             plt.plot(freq, magnitude)
             # plt.axis([0, 10000, 0, 300000])
-            plt.xlim([0, 5000])
+            plt.xlim([0, 3000])
             plt.ylim(bottom=0)
             plt.title("key = {}, time = {} ms, keyboard = {}".format(label, timestamp, KEYBOARD_TYPE))
             plt.xlabel("Frequency (Hz)")

@@ -2,123 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="824f000d-f08e-4424-9042-b6321c66a2b8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/csv-plugin.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/other.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/peak_plot.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/peaks.csv" beforeDir="false" afterPath="$PROJECT_DIR$/features/peaks.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fft.py" beforeDir="false" afterPath="$PROJECT_DIR$/fft.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fft_peak_analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/fft_peak_analysis.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/peak_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/peak_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/average_fft/b.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/average_fft/b.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/average_fft/c.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/average_fft/c.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/average_fft/e.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/average_fft/e.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/average_fft/i.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/average_fft/i.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/average_fft/m.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/average_fft/m.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/average_fft/n.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/average_fft/n.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/average_fft/o.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/average_fft/o.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/average_fft/q.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/average_fft/q.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/average_fft/t.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/average_fft/t.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/average_fft/u.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/average_fft/u.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/average_fft/v.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/average_fft/v.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/average_fft/w.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/average_fft/w.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/average_fft/x.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/average_fft/x.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/average_fft/y.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/average_fft/y.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/average_fft/z.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/average_fft/z.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fft/2021-4-17-16-39-48_Backspace.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fft/2021-4-17-16-39-48_Backspace.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fft/2021-4-17-16-39-48_Enter.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fft/2021-4-17-16-39-48_Enter.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fft/2021-4-17-16-39-48_Space.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fft/2021-4-17-16-39-48_Space.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fft/2021-4-17-16-39-48_a.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fft/2021-4-17-16-39-48_a.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fft/2021-4-17-16-39-48_e.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fft/2021-4-17-16-39-48_e.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fft/2021-4-17-16-39-48_k.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fft/2021-4-17-16-39-48_k.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fft/2021-4-17-16-39-48_m.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fft/2021-4-17-16-39-48_m.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fft/2021-4-17-16-39-48_s.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fft/2021-4-17-16-39-48_s.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fft/2021-4-17-16-39-48_w.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fft/2021-4-17-16-39-48_w.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fft/2021-4-17-19-19-48_a.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fft/2021-4-17-19-19-48_a.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fft/2021-4-17-19-19-48_p.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fft/2021-4-17-19-19-48_p.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fft/2021-4-22-10-16-45_Backspace.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fft/2021-4-22-10-16-45_Backspace.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fft/2021-4-22-10-16-45_Enter.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fft/2021-4-22-10-16-45_Enter.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fft/2021-4-22-10-16-45_Space.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fft/2021-4-22-10-16-45_Space.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fft/2021-4-22-10-16-45_a.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fft/2021-4-22-10-16-45_a.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fft/2021-4-22-10-16-45_e.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fft/2021-4-22-10-16-45_e.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fft/2021-4-22-10-16-45_i.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fft/2021-4-22-10-16-45_i.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fft/2021-4-22-10-16-45_l.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fft/2021-4-22-10-16-45_l.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fft/2021-4-22-10-16-45_n.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fft/2021-4-22-10-16-45_n.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fft/2021-4-22-10-16-45_q.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fft/2021-4-22-10-16-45_q.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fft/2021-4-22-10-16-45_s.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fft/2021-4-22-10-16-45_s.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fft/2021-4-22-10-16-45_w.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fft/2021-4-22-10-16-45_w.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fft/2021-4-22-10-16-8_a.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fft/2021-4-22-10-16-8_a.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fft/2021-4-22-10-16-8_d.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fft/2021-4-22-10-16-8_d.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fft/2021-4-22-10-16-8_e.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fft/2021-4-22-10-16-8_e.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fft/2021-4-22-10-16-8_i.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fft/2021-4-22-10-16-8_i.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fft/2021-4-22-10-16-8_j.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fft/2021-4-22-10-16-8_j.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fft/2021-4-22-10-16-8_m.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fft/2021-4-22-10-16-8_m.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fft/2021-4-22-10-16-8_n.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fft/2021-4-22-10-16-8_n.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fft/2021-4-22-10-16-8_o.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fft/2021-4-22-10-16-8_o.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fft/2021-4-22-10-17-25_Space.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fft/2021-4-22-10-17-25_Space.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fft/2021-4-22-10-17-25_e.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fft/2021-4-22-10-17-25_e.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fft/2021-4-22-10-17-25_h.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fft/2021-4-22-10-17-25_h.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fft/2021-4-22-10-17-25_i.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fft/2021-4-22-10-17-25_i.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fft/2021-4-22-10-17-25_k.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fft/2021-4-22-10-17-25_k.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fft/2021-4-22-10-17-25_l.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fft/2021-4-22-10-17-25_l.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fft/2021-4-22-10-17-25_o.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fft/2021-4-22-10-17-25_o.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fft/2021-4-22-10-17-25_q.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fft/2021-4-22-10-17-25_q.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fft/2021-4-22-10-17-25_r.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fft/2021-4-22-10-17-25_r.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fft/2021-4-22-10-17-25_t.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fft/2021-4-22-10-17-25_t.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fft/2021-4-22-10-17-25_w.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fft/2021-4-22-10-17-25_w.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fft/2021-4-22-10-17-25_y.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fft/2021-4-22-10-17-25_y.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fft/2021-4-22-10-17-25_z.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fft/2021-4-22-10-17-25_z.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fft/2021-4-22-10-18-10_u.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fft/2021-4-22-10-18-10_u.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fft/2021-4-22-10-18-41_e.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fft/2021-4-22-10-18-41_e.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fft/2021-4-22-10-18-41_i.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fft/2021-4-22-10-18-41_i.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fft/2021-4-22-10-19-34_o.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fft/2021-4-22-10-19-34_o.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fft/2021-4-22-10-19-34_y.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fft/2021-4-22-10-19-34_y.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fft/2021-4-22-10-20-21_n.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fft/2021-4-22-10-20-21_n.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fft/2021-4-22-10-20-21_w.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fft/2021-4-22-10-20-21_w.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fft/2021-4-22-10-21-12_2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fft/2021-4-22-10-21-12_2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fft/2021-4-22-10-21-12_3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fft/2021-4-22-10-21-12_3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fft/2021-4-22-10-21-12_4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fft/2021-4-22-10-21-12_4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fft/2021-4-22-10-21-12_5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fft/2021-4-22-10-21-12_5.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fft/2021-4-22-10-21-12_6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fft/2021-4-22-10-21-12_6.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fft/2021-4-22-10-21-12_7.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fft/2021-4-22-10-21-12_7.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fft/2021-4-22-10-21-12_8.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fft/2021-4-22-10-21-12_8.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fft/2021-4-22-10-22-49_r.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fft/2021-4-22-10-22-49_r.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fft/2021-4-22-10-22-49_t.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fft/2021-4-22-10-22-49_t.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fft/2021-4-22-10-23-30_t.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fft/2021-4-22-10-23-30_t.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fft/2021-4-22-10-23-30_y.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fft/2021-4-22-10-23-30_y.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/spectrograms/2021-4-17-16-39-48.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/spectrograms/2021-4-17-16-39-48.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/spectrograms/2021-4-17-19-19-48.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/spectrograms/2021-4-17-19-19-48.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/spectrograms/2021-4-22-10-16-45.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/spectrograms/2021-4-22-10-16-45.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/spectrograms/2021-4-22-10-16-8.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/spectrograms/2021-4-22-10-16-8.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/spectrograms/2021-4-22-10-17-25.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/spectrograms/2021-4-22-10-17-25.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/spectrograms/2021-4-22-10-18-10.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/spectrograms/2021-4-22-10-18-10.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/spectrograms/2021-4-22-10-18-41.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/spectrograms/2021-4-22-10-18-41.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/spectrograms/2021-4-22-10-19-34.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/spectrograms/2021-4-22-10-19-34.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/spectrograms/2021-4-22-10-20-21.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/spectrograms/2021-4-22-10-20-21.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/spectrograms/2021-4-22-10-21-12.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/spectrograms/2021-4-22-10-21-12.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/spectrograms/2021-4-22-10-22-49.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/spectrograms/2021-4-22-10-22-49.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/spectrograms/2021-4-22-10-23-30.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/spectrograms/2021-4-22-10-23-30.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/spectrograms/2021-4-22-10-28-26.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/spectrograms/2021-4-22-10-28-26.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/spectrograms/2021-4-22-10-28-55.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/spectrograms/2021-4-22-10-28-55.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/spectrograms/2021-4-22-10-29-26.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/spectrograms/2021-4-22-10-29-26.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/spectrograms/2021-4-22-10-29-54.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/spectrograms/2021-4-22-10-29-54.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/spectrograms/2021-4-25-14-15-13.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/spectrograms/2021-4-25-14-15-13.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/spectrograms/2021-4-25-14-16-32.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/spectrograms/2021-4-25-14-16-32.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/spectrograms/2021-4-25-14-16-55.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/spectrograms/2021-4-25-14-16-55.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/spectrograms/2021-4-25-14-18-10.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/spectrograms/2021-4-25-14-18-10.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/spectrograms/2021-4-25-14-19-12.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/spectrograms/2021-4-25-14-19-12.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/spectrograms/2021-4-25-14-19-50.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/spectrograms/2021-4-25-14-19-50.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/spectrograms/2021-4-25-14-20-35.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/spectrograms/2021-4-25-14-20-35.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/spectrograms/2021-4-25-14-23-43.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/spectrograms/2021-4-25-14-23-43.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/spectrograms/2021-4-25-14-24-37.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/spectrograms/2021-4-25-14-24-37.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/spectrograms/2021-4-25-15-11-22.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/spectrograms/2021-4-25-15-11-22.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/spectrograms/2021-4-25-15-11-47.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/spectrograms/2021-4-25-15-11-47.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/spectrograms/2021-4-25-15-12-16.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/spectrograms/2021-4-25-15-12-16.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/spectrograms/2021-4-25-15-13-2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/spectrograms/2021-4-25-15-13-2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/spectrograms/2021-4-25-15-13-27.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/spectrograms/2021-4-25-15-13-27.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/spectrograms/2021-4-25-15-13-48.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/spectrograms/2021-4-25-15-13-48.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/spectrograms/2021-4-25-15-14-18.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/spectrograms/2021-4-25-15-14-18.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/spectrograms/2021-4-25-15-14-53.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/spectrograms/2021-4-25-15-14-53.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/spectrograms/2021-4-25-15-15-25.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/plots/spectrograms/2021-4-25-15-15-25.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spectrogram.py" beforeDir="false" afterPath="$PROJECT_DIR$/spectrogram.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,8 +48,8 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/peak_model.py" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.project" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/peak_plot.py" />
+    <property name="settings.editor.selected.configurable" value="PyScientificConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -171,7 +58,7 @@
       <recent name="C:\Users\aband\PycharmProjects\key-data-analysis\raw_data" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.peak_model">
+  <component name="RunManager" selected="Python.peak_plot">
     <configuration name="average_fft" type="PythonConfigurationType" factoryName="Python">
       <module name="key-data-analysis" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -260,6 +147,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="peak_plot" type="PythonConfigurationType" factoryName="Python">
+      <module name="key-data-analysis" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\aband\PycharmProjects\key-data-analysis\venv\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/peak_plot.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="spectrogram" type="PythonConfigurationType" factoryName="Python">
       <module name="key-data-analysis" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -288,6 +197,7 @@
       <item itemvalue="Python.average_fft" />
       <item itemvalue="Python.fft_peak_analysis" />
       <item itemvalue="Python.peak_model" />
+      <item itemvalue="Python.peak_plot" />
     </list>
   </component>
   <component name="SvnConfiguration">
@@ -306,7 +216,7 @@
       <workItem from="1619051326947" duration="14539000" />
       <workItem from="1619385129460" duration="9115000" />
       <workItem from="1619405272489" duration="6362000" />
-      <workItem from="1619631475880" duration="7497000" />
+      <workItem from="1619631475880" duration="11697000" />
     </task>
     <servers />
   </component>
@@ -314,76 +224,78 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="414" y="176" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1619409470500">
+    <state x="414" y="176" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1619659991353">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="368" y="156" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1707.920@0.0.1707.920" timestamp="1618706638431" />
-    <state x="414" y="176" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.0.1707.920@0.0.1920.1040" timestamp="1619409470500" />
-    <state x="740" y="276" key="FileChooserDialogImpl" timestamp="1619409469057">
+    <state x="414" y="176" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.0.1707.920@0.0.1920.1040" timestamp="1619659991353" />
+    <state x="740" y="276" key="FileChooserDialogImpl" timestamp="1619659989935">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="658" y="244" key="FileChooserDialogImpl/0.0.1707.920@0.0.1707.920" timestamp="1618706636703" />
-    <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1707.920@0.0.1920.1040" timestamp="1619409469057" />
-    <state width="1664" height="282" key="GridCell.Tab.0.bottom" timestamp="1619656089622">
-      <screen x="0" y="0" width="1707" height="920" />
+    <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1707.920@0.0.1920.1040" timestamp="1619659989935" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1619664482242">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1664" height="282" key="GridCell.Tab.0.bottom/0.0.1707.920@0.0.1707.920" timestamp="1619656089622" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1707.920@0.0.1920.1040" timestamp="1619635037306" />
-    <state width="1664" height="282" key="GridCell.Tab.0.center" timestamp="1619656089621">
-      <screen x="0" y="0" width="1707" height="920" />
+    <state width="1664" height="282" key="GridCell.Tab.0.bottom/0.0.1707.920@0.0.1707.920" timestamp="1619656347749" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1707.920@0.0.1920.1040" timestamp="1619664482242" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1619664482241">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1664" height="282" key="GridCell.Tab.0.center/0.0.1707.920@0.0.1707.920" timestamp="1619656089621" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1707.920@0.0.1920.1040" timestamp="1619635037306" />
-    <state width="1664" height="282" key="GridCell.Tab.0.left" timestamp="1619656089621">
-      <screen x="0" y="0" width="1707" height="920" />
+    <state width="1664" height="282" key="GridCell.Tab.0.center/0.0.1707.920@0.0.1707.920" timestamp="1619656347748" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1707.920@0.0.1920.1040" timestamp="1619664482241" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1619664482240">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1664" height="282" key="GridCell.Tab.0.left/0.0.1707.920@0.0.1707.920" timestamp="1619656089621" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1707.920@0.0.1920.1040" timestamp="1619635037306" />
-    <state width="1664" height="282" key="GridCell.Tab.0.right" timestamp="1619656089621">
-      <screen x="0" y="0" width="1707" height="920" />
+    <state width="1664" height="282" key="GridCell.Tab.0.left/0.0.1707.920@0.0.1707.920" timestamp="1619656347748" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1707.920@0.0.1920.1040" timestamp="1619664482240" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1619664482241">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1664" height="282" key="GridCell.Tab.0.right/0.0.1707.920@0.0.1707.920" timestamp="1619656089621" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1707.920@0.0.1920.1040" timestamp="1619635037306" />
-    <state width="1664" height="300" key="GridCell.Tab.1.bottom" timestamp="1619656081020">
-      <screen x="0" y="0" width="1707" height="920" />
+    <state width="1664" height="282" key="GridCell.Tab.0.right/0.0.1707.920@0.0.1707.920" timestamp="1619656347749" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1707.920@0.0.1920.1040" timestamp="1619664482241" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1619661290114">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1664" height="300" key="GridCell.Tab.1.bottom/0.0.1707.920@0.0.1707.920" timestamp="1619656081020" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1707.920@0.0.1920.1040" timestamp="1619634875472" />
-    <state width="1664" height="300" key="GridCell.Tab.1.center" timestamp="1619656081020">
-      <screen x="0" y="0" width="1707" height="920" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1707.920@0.0.1920.1040" timestamp="1619661290114" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1619661290114">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1664" height="300" key="GridCell.Tab.1.center/0.0.1707.920@0.0.1707.920" timestamp="1619656081020" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1707.920@0.0.1920.1040" timestamp="1619634875472" />
-    <state width="1664" height="300" key="GridCell.Tab.1.left" timestamp="1619656081020">
-      <screen x="0" y="0" width="1707" height="920" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1707.920@0.0.1920.1040" timestamp="1619661290114" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1619661290114">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1664" height="300" key="GridCell.Tab.1.left/0.0.1707.920@0.0.1707.920" timestamp="1619656081020" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1707.920@0.0.1920.1040" timestamp="1619634875472" />
-    <state width="1664" height="300" key="GridCell.Tab.1.right" timestamp="1619656081020">
-      <screen x="0" y="0" width="1707" height="920" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1707.920@0.0.1920.1040" timestamp="1619661290114" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1619661290114">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1664" height="300" key="GridCell.Tab.1.right/0.0.1707.920@0.0.1707.920" timestamp="1619656081020" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1707.920@0.0.1920.1040" timestamp="1619634875472" />
-    <state x="461" y="163" key="SettingsEditor" timestamp="1619394409696">
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1707.920@0.0.1920.1040" timestamp="1619661290114" />
+    <state x="461" y="163" key="SettingsEditor" timestamp="1619661447188">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="410" y="144" key="SettingsEditor/0.0.1707.920@0.0.1707.920" timestamp="1618706612673" />
-    <state x="461" y="163" key="SettingsEditor/0.0.1920.1040/1920.0.1707.920@0.0.1920.1040" timestamp="1619394409696" />
+    <state x="461" y="163" key="SettingsEditor/0.0.1920.1040/1920.0.1707.920@0.0.1920.1040" timestamp="1619661447188" />
     <state x="583" y="305" width="607" height="345" key="com.intellij.ide.util.TipDialog" timestamp="1619631477502">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
     <state x="583" y="305" key="com.intellij.ide.util.TipDialog/0.0.1707.920@0.0.1707.920" timestamp="1619631477502" />
     <state x="656" y="345" width="607" height="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1707.920@0.0.1920.1040" timestamp="1619405271751" />
-    <state x="516" y="196" width="670" height="58" key="search.everywhere.popup" timestamp="1618704919260">
-      <screen x="0" y="0" width="1707" height="920" />
+    <state x="580" y="222" width="754" height="160" key="search.everywhere.popup" timestamp="1619659929519">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="516" y="196" width="670" height="58" key="search.everywhere.popup/0.0.1707.920@0.0.1707.920" timestamp="1618704919260" />
+    <state x="580" y="222" width="754" height="160" key="search.everywhere.popup/0.0.1920.1040/1920.0.1707.920@0.0.1920.1040" timestamp="1619659929519" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/key_data_analysis$average_fft.coverage" NAME="average_fft Coverage Results" MODIFIED="1619631793159" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/key_data_analysis$fft.coverage" NAME="fft Coverage Results" MODIFIED="1619654017681" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/key_data_analysis$peak_plot.coverage" NAME="peak_plot Coverage Results" MODIFIED="1619664482224" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/key_data_analysis$spectrogram.coverage" NAME="spectrogram Coverage Results" MODIFIED="1619653901671" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/key_data_analysis$peak_model.coverage" NAME="peak_model Coverage Results" MODIFIED="1619656089612" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/key_data_analysis$peak_model.coverage" NAME="peak_model Coverage Results" MODIFIED="1619656347740" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/key_data_analysis$fft_peak_analysis.coverage" NAME="fft_peak_analysis Coverage Results" MODIFIED="1619656009759" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

@@ -26,7 +26,7 @@ cnt_labels = {}
 peaks_file = open(os.path.join(DIR_OUT, KEYBOARD_TYPE, "peaks.csv"), "w")
 cols = "key"
 for i in range(num_peaks):
-    cols += ",peak_{}".format((i+1))
+    cols += ",peak_{},ampl_{}".format((i+1), (i+1))
 cols += "\n"
 peaks_file.write(cols)
 
@@ -78,16 +78,16 @@ for f in os.listdir(os.path.join(DIR_IN, KEYBOARD_TYPE)):
             print("len(peaks_raw) ", len(peaks_raw))
 
             # Sort the peaks in ascending order
-            peak_freq = freq[np.sort(peaks_raw)]
+            peaks = np.sort(peaks_raw)
             print("peak_freq ", peaks_raw)
             print()
 
-            if len(peak_freq) < num_peaks:
+            if len(peaks) < num_peaks:
                 continue
             # Save peak data to output file
             peaks_file.write(label)
             for i in range(num_peaks):
-                peaks_file.write(",{}".format(np.round(peak_freq[i])))
+                peaks_file.write(",{},{}".format(np.round(freq[peaks[i]]), np.int(magnitude[peaks[i]])))
             peaks_file.write("\n")
 
             # Plot fft

@@ -14,21 +14,24 @@ from sklearn.metrics import accuracy_score, recall_score, precision_score, f1_sc
 
 dir_in = "features"
 keyboard_type = "mechanical"
-model = "KNN"
+model = "LR"
 
 df = pd.read_csv(os.path.join(dir_in, keyboard_type, "peaks.csv"))
+print(df.head())
 
 # Every column except the 0th column is an input feature
 x = np.array(df.iloc[:, 1:])
 
 # Key label
 y = np.array(df["key"])
+print("x, ", x)
+print("y, ", y)
 
 # Split into train and test sets
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2)
 
 if model == "KNN":
-    clf = KNeighborsClassifier(n_neighbors=5, weights='distance')
+    clf = KNeighborsClassifier(n_neighbors=3, weights='distance')
 elif model == "SVM":
     clf = SVC()
 elif model == "LR":

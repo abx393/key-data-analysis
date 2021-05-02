@@ -6,19 +6,20 @@ import os
 import numpy as np
 
 from scipy.io import wavfile
+from scipy.signal import find_peaks
 from matplotlib import pyplot as plt
 from json import JSONDecoder
 
 DIR_IN = "raw_data"
 DIR_OUT = "features"
-KEYBOARD_TYPE = "membrane"
+KEYBOARD_TYPE = "mechanical"
 
 # 2 * offset = n (length of FFT)
 offset = 5000
 
-num_peaks = 4
+num_peaks = 3
 
-subset_labels = ["a", "Space", "Backspace"]
+subset_labels = ["a", "Space"]
 cnt_labels = {}
 
 # Output file
@@ -33,6 +34,7 @@ cnt = 0
 
 for f in os.listdir(os.path.join(DIR_IN, KEYBOARD_TYPE)):
     (basename, extension) = f.split(".")
+    print("basename ", basename)
 
     # If it's a wav file, generate fft plot
     if extension == "wav":
@@ -44,8 +46,8 @@ for f in os.listdir(os.path.join(DIR_IN, KEYBOARD_TYPE)):
         for timestamp in labels:
             # the key that was pressed
             label = labels[timestamp]
-            # if label not in subset_labels:
-                # continue
+            if label not in subset_labels:
+               continue
             cnt_labels[label] = cnt_labels.get(label, 0) + 1
             print("label ", label)
 
@@ -67,13 +69,21 @@ for f in os.listdir(os.path.join(DIR_IN, KEYBOARD_TYPE)):
             magnitude = magnitude[: n // 2]
 
             # Find the k highest peaks
-            peak_freq = freq[np.argpartition(-magnitude, num_peaks)[: num_peaks]]
 
-            # Sort the peaks in descending order
-            peak_freq = -np.sort(-peak_freq)
-            print("peak_freq ", peak_freq)
+            # 1. Stupid way
+            # peak_freq = freq[np.argpartition(-magnitude, num_peaks)[: num_peaks]]
+
+            # 2. Better way
+            peaks_raw, props = find_peaks(magnitude, distance=200, height=max(magnitude)/50)
+            print("len(peaks_raw) ", len(peaks_raw))
+
+            # Sort the peaks in ascending order
+            peak_freq = freq[np.sort(peaks_raw)]
+            print("peak_freq ", peaks_raw)
             print()
 
+            if len(peak_freq) < num_peaks:
+                continue
             # Save peak data to output file
             peaks_file.write(label)
             for i in range(num_peaks):
@@ -81,8 +91,11 @@ for f in os.listdir(os.path.join(DIR_IN, KEYBOARD_TYPE)):
             peaks_file.write("\n")
 
             # Plot fft
+            ax = plt.gca()
+            for peak in peaks_raw:
+                ax.text(freq[peak], magnitude[peak], "x")
             plt.plot(freq, magnitude)
-            plt.xlim([0, 10000])
+            plt.xlim([0, 6000])
             plt.ylim(bottom=0)
             plt.title("key = {}, time = {} ms, keyboard = {}".format(label, timestamp, KEYBOARD_TYPE))
             plt.xlabel("Frequency (Hz)")

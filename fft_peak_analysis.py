@@ -19,7 +19,7 @@ offset = 5000
 
 num_peaks = 3
 
-subset_labels = ["a", "Space"]
+subset_labels = ["a", "Space", "Backspace"]
 cnt_labels = {}
 
 # Output file
@@ -86,8 +86,12 @@ for f in os.listdir(os.path.join(DIR_IN, KEYBOARD_TYPE)):
                 continue
             # Save peak data to output file
             peaks_file.write(label)
+            print("magnitude[peaks ", np.real(magnitude[peaks]))
+            max_mag = np.max(np.real(magnitude[peaks]))
+            print("max_mag ", max_mag)
+
             for i in range(num_peaks):
-                peaks_file.write(",{},{}".format(np.round(freq[peaks[i]]), np.int(magnitude[peaks[i]])))
+                peaks_file.write(",{},{}".format(np.round(freq[peaks[i]] / 5000, 3), np.round(np.real(magnitude[peaks[i]]) / max_mag, 3)))
             peaks_file.write("\n")
 
             # Plot fft

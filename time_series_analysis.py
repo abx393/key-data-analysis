@@ -1,0 +1,42 @@
+import os
+import numpy as np
+
+from json import JSONDecoder
+import matplotlib.pyplot as plt
+
+DIR_IN = "raw_data"
+SUBDIR_IN = "time_series"
+
+for f in os.listdir(os.path.join(DIR_IN, SUBDIR_IN)):
+    (basename, extension) = f.split(".")
+
+    if extension == "json":
+        labels_file = open(os.path.join(DIR_IN, SUBDIR_IN, f))
+        labels = JSONDecoder().decode(labels_file.read())
+
+        t_prev = 0
+        ts = np.asarray(list(labels.keys()), dtype=np.int)
+        keys = np.array(list(labels.values()))
+
+        # Plot the 1st difference of the list of timestamps
+        x = np.arange(len(ts) - 1)
+        y = np.diff(ts, n=1)
+
+
+        plt.plot(x, y)
+        plt.scatter(x, y)
+
+        # Annotate the plot with which keys were pressed
+        ax = plt.gca()
+        for i in range(len(keys) - 1):
+            ax.annotate(keys[i] + " -> " + keys[i+1], (i - 0.2, y[i] - 30))
+
+        word = ""
+        for key in keys:
+            word += key
+
+        plt.title(word)
+        plt.ylim([0, 300])
+        plt.ylabel("Time interval (ms)")
+        plt.show()
+

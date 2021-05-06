@@ -9,8 +9,8 @@ from scipy.signal import spectrogram
 from matplotlib import pyplot as plt
 from json import JSONDecoder
 
-DIR_IN = "raw_data"
-DIR_OUT = "plots/spectrograms"
+DIR_IN = "../raw_data"
+DIR_OUT = "../plots/spectrograms"
 KEYBOARD_TYPE = "membrane"
 
 for f in os.listdir(os.path.join(DIR_IN, KEYBOARD_TYPE)):
@@ -28,7 +28,7 @@ for f in os.listdir(os.path.join(DIR_IN, KEYBOARD_TYPE)):
         freqs, times, spec = spectrogram(samples, sample_rate, nperseg=10000, noverlap=5000)
 
         # Plot spectrogram using color map
-        plt.pcolormesh(times, freqs, spec, vmin=0, vmax=1000)
+        plt.pcolormesh(times, freqs, spec, vmin=0, vmax=100)
         plt.title("timestamp = {}, Keyboard = {}".format(basename, KEYBOARD_TYPE))
         plt.xlabel("Time (s)")
         plt.ylabel("Frequency (Hz)")

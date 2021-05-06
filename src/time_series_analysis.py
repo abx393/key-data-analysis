@@ -4,8 +4,10 @@ import numpy as np
 from json import JSONDecoder
 import matplotlib.pyplot as plt
 
-DIR_IN = "raw_data"
+DIR_IN = "../raw_data"
 SUBDIR_IN = "time_series"
+DIR_OUT = "../plots"
+SUBDIR_OUT = "time_series"
 
 for f in os.listdir(os.path.join(DIR_IN, SUBDIR_IN)):
     (basename, extension) = f.split(".")
@@ -22,7 +24,6 @@ for f in os.listdir(os.path.join(DIR_IN, SUBDIR_IN)):
         x = np.arange(len(ts) - 1)
         y = np.diff(ts, n=1)
 
-
         plt.plot(x, y)
         plt.scatter(x, y)
 
@@ -38,5 +39,6 @@ for f in os.listdir(os.path.join(DIR_IN, SUBDIR_IN)):
         plt.title(word)
         plt.ylim([0, 300])
         plt.ylabel("Time interval (ms)")
+        plt.savefig(os.path.join(DIR_OUT, SUBDIR_OUT, word + ".jpg"))
         plt.show()
 

@@ -10,8 +10,8 @@ from scipy.signal import find_peaks
 from matplotlib import pyplot as plt
 from json import JSONDecoder
 
-DIR_IN = "raw_data"
-DIR_OUT = "features"
+DIR_IN = "../raw_data"
+DIR_OUT = "../features"
 KEYBOARD_TYPE = "mechanical"
 
 # 2 * offset = n (length of FFT)

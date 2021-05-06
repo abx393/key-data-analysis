@@ -12,7 +12,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, recall_score, precision_score, f1_score
 
-dir_in = "features"
+dir_in = "../features"
 keyboard_type = "mechanical"
 model = "LR"
 

@@ -17,6 +17,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\native_raw_data\2021-05-05-21-30-23.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
       </map>
     </option>
   </component>

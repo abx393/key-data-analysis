@@ -12,7 +12,7 @@ from json import JSONDecoder
 
 DIR_IN = "native_raw_data"
 DIR_OUT = "plots/fft"
-KEYBOARD_TYPE = "membrane"
+KEYBOARD_TYPE = "mechanical"
 
 offset = 10000
 
@@ -23,6 +23,8 @@ for f in os.listdir(os.path.join(DIR_IN, KEYBOARD_TYPE)):
     # If it's a wav file, generate fft plot
     if extension == "wav":
         sample_rate, samples = wavfile.read(os.path.join(DIR_IN, KEYBOARD_TYPE, f))
+        print(samples)
+        # samples = samples[:,0]
 
         """
         # Get corresponding ground truth JSON file
@@ -57,7 +59,7 @@ for f in os.listdir(os.path.join(DIR_IN, KEYBOARD_TYPE)):
 
             plt.plot(freq, magnitude)
             # plt.axis([0, 10000, 0, 300000])
-            # plt.xlim([0, 3000])
+            plt.xlim([0, 3000])
             plt.ylim(bottom=0)
             plt.title("key = {}, time = {} s, keyboard = {}".format(label, timestamp, KEYBOARD_TYPE))
             plt.xlabel("Frequency (Hz)")

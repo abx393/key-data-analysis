@@ -24,7 +24,7 @@ for f in os.listdir(os.path.join(DIR_IN, KEYBOARD_TYPE)):
     if extension == "wav":
         sample_rate, samples = wavfile.read(os.path.join(DIR_IN, KEYBOARD_TYPE, f))
         print(samples)
-        # samples = samples[:,0]
+        samples = samples[:, 1]
 
         """
         # Get corresponding ground truth JSON file
@@ -40,7 +40,7 @@ for f in os.listdir(os.path.join(DIR_IN, KEYBOARD_TYPE)):
             # the key that was pressed
             label = df.iloc[i, 0]
 
-            # timestamp is seconds stil start of audio recording
+            # timestamp is seconds since start of audio recording
             timestamp = float(df.iloc[i, 1])
 
             # Get the range of samples associated with the current key press

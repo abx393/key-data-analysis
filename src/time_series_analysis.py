@@ -4,9 +4,9 @@ import numpy as np
 from json import JSONDecoder
 import matplotlib.pyplot as plt
 
-DIR_IN = "../raw_data"
+DIR_IN = "raw_data"
 SUBDIR_IN = "time_series"
-DIR_OUT = "../plots"
+DIR_OUT = "plots"
 SUBDIR_OUT = "time_series"
 
 for f in os.listdir(os.path.join(DIR_IN, SUBDIR_IN)):

@@ -4,14 +4,15 @@ Find and analyze top k peaks in Fourier Transforms for each key
 
 import os
 import numpy as np
+import pandas as pd
 
 from scipy.io import wavfile
 from scipy.signal import find_peaks
 from matplotlib import pyplot as plt
 from json import JSONDecoder
 
-DIR_IN = "../raw_data"
-DIR_OUT = "../features"
+DIR_IN = "native_raw_data"
+DIR_OUT = "features"
 KEYBOARD_TYPE = "mechanical"
 
 # 2 * offset = n (length of FFT)
@@ -19,14 +20,15 @@ offset = 5000
 
 num_peaks = 3
 
-subset_labels = ["Space", "Backspace"]
+subset_labels = ["space", "a", "backspace"]
 cnt_labels = {}
 
 # Output file
 peaks_file = open(os.path.join(DIR_OUT, KEYBOARD_TYPE, "peaks.csv"), "w")
 cols = "key"
 for i in range(num_peaks):
-    cols += ",peak_{},ampl_{}".format((i+1), (i+1))
+    cols += ",peak_{}".format((i+1), (i+1))
+    # cols += ",peak_{},ampl_{}".format((i+1), (i+1))
 cols += "\n"
 peaks_file.write(cols)
 
@@ -39,24 +41,33 @@ for f in os.listdir(os.path.join(DIR_IN, KEYBOARD_TYPE)):
     # If it's a wav file, generate fft plot
     if extension == "wav":
         sample_rate, samples = wavfile.read(os.path.join(DIR_IN, KEYBOARD_TYPE, f))
+        samples = samples[:, 1]
 
+        """
         # Get corresponding ground truth JSON file
         labels_file = open(os.path.join(DIR_IN, KEYBOARD_TYPE, basename + ".json"))
         labels = JSONDecoder().decode(labels_file.read())
-        for timestamp in labels:
-            # the key that was pressed
-            label = labels[timestamp]
-            if label not in subset_labels:
-               continue
-            cnt_labels[label] = cnt_labels.get(label, 0) + 1
-            print("label ", label)
+        """
 
-            # timestamp is milliseconds since start of audio
-            timestamp = int(timestamp)
+        # Get corresponding ground truth CSV file
+        labels_file = open(os.path.join(DIR_IN, KEYBOARD_TYPE, basename + ".csv"))
+        df = pd.read_csv(labels_file)
+        labels_file.close()
+        for i in range(len(df)):
+            # the key that was pressed
+            label = df.iloc[i, 0]
+
+            # timestamp is seconds since start of audio recording
+            timestamp = float(df.iloc[i, 1])
+
+            if label not in subset_labels:
+                continue
+            cnt_labels[label] = cnt_labels.get(label, 0) + 1
+            # print("label ", label)
 
             # Get the range of samples associated with the current key press
-            sample_start = timestamp * sample_rate // 1000 - offset
-            sample_end = timestamp * sample_rate // 1000 + offset
+            sample_start = int(timestamp * sample_rate - offset)
+            sample_end = int(timestamp * sample_rate + offset)
 
             # number of time samples or number of frequency bins
             n = sample_end - sample_start
@@ -74,25 +85,26 @@ for f in os.listdir(os.path.join(DIR_IN, KEYBOARD_TYPE)):
             # peak_freq = freq[np.argpartition(-magnitude, num_peaks)[: num_peaks]]
 
             # 2. Better way
-            peaks_raw, props = find_peaks(magnitude, distance=200, height=max(magnitude)/50)
-            print("len(peaks_raw) ", len(peaks_raw))
+            peaks_raw, props = find_peaks(magnitude, distance=50)
+            """, height=max(magnitude)/50"""
+            """ distance=150 """
+            # print("len(peaks_raw) ", len(peaks_raw))
 
             # Sort the peaks in ascending order
             peaks = np.sort(peaks_raw)
-            print("peak_freq ", peaks_raw)
+            # print("peak_freq ", peaks_raw)
             print()
 
             if len(peaks) < num_peaks:
                 continue
             # Save peak data to output file
             peaks_file.write(label)
-            print("magnitude[peaks ", np.real(magnitude[peaks]))
             max_mag = np.max(np.real(magnitude[peaks]))
-            print("max_mag ", max_mag)
 
-            max_freq = 5000
+            # max_freq = 4000
+            max_freq = 1
             for i in range(num_peaks):
-                peaks_file.write(",{},{}".format(np.round(freq[peaks[i]] / max_freq, 3), np.round(np.real(magnitude[peaks[i]]) / max_mag, 3)))
+                peaks_file.write(",{}".format(np.round(freq[peaks[i]] / max_freq, 3)))
             peaks_file.write("\n")
 
             # Plot fft
@@ -102,14 +114,31 @@ for f in os.listdir(os.path.join(DIR_IN, KEYBOARD_TYPE)):
             plt.plot(freq, magnitude)
             plt.xlim([0, 6000])
             plt.ylim(bottom=0)
-            plt.title("key = {}, time = {} ms, keyboard = {}".format(label, timestamp, KEYBOARD_TYPE))
+            plt.title("key = {}, time = {} s, keyboard = {}".format(label, timestamp, KEYBOARD_TYPE))
             plt.xlabel("Frequency (Hz)")
             plt.ylabel("Amplitude")
-            if cnt < 6:
-                plt.show()
-            cnt += 1
+            plt.show()
 
         labels_file.close()
 
 print("cnt_labels ", cnt_labels)
 peaks_file.close()
+
+df = pd.read_csv(os.path.join(DIR_OUT, KEYBOARD_TYPE, "peaks.csv"))
+
+df.set_index("key", inplace=True)
+
+legend = []
+for key in subset_labels:
+    print("Mean: key={}".format(key))
+    print(df.loc[key, :].mean())
+    print("Variance: key={}".format(key))
+    print(df.loc[key, :].var())
+    print()
+    plt.title("Peak analysis: key={}".format(key))
+
+    boxplot = df.loc[key, :].boxplot(column=["peak_1", "peak_2", "peak_3"])
+    # legend.append("key={}".format(key))
+
+    # plt.legend(legend)
+    # plt.show()

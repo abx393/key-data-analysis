@@ -10,12 +10,12 @@ import pandas as pd
 from mpl_toolkits import mplot3d
 import matplotlib.pyplot as plt
 
-DIR_IN = "../features"
+DIR_IN = "features"
 KEYBOARD_TYPE = "mechanical"
 
 df = pd.read_csv(os.path.join(DIR_IN, KEYBOARD_TYPE, "peaks.csv"))
 keys = set(np.array(df.key))
-keys = ["a", "b", "c"]
+keys = ["space", "backspace", "a"]
 
 df.set_index("key", inplace=True)
 

@@ -20,7 +20,7 @@ offset = 5000
 
 num_peaks = 3
 
-subset_labels = ["space", "a", "backspace"]
+subset_labels = ["space", "a", "backspace", "mouse_click"]
 cnt_labels = {}
 
 # Output file
@@ -41,7 +41,8 @@ for f in os.listdir(os.path.join(DIR_IN, KEYBOARD_TYPE)):
     # If it's a wav file, generate fft plot
     if extension == "wav":
         sample_rate, samples = wavfile.read(os.path.join(DIR_IN, KEYBOARD_TYPE, f))
-        samples = samples[:, 1]
+        if len(samples.shape) == 2:
+            samples = np.array(samples[:, 1])
 
         """
         # Get corresponding ground truth JSON file
@@ -73,6 +74,8 @@ for f in os.listdir(os.path.join(DIR_IN, KEYBOARD_TYPE)):
             n = sample_end - sample_start
 
             freq = np.fft.fftfreq(n, 1 / sample_rate)
+            print("sample_start ", sample_start)
+            print("sample_end ", sample_end)
             magnitude = np.fft.fft(samples[sample_start : sample_end])
 
             # only look at positive frequencies
@@ -85,7 +88,7 @@ for f in os.listdir(os.path.join(DIR_IN, KEYBOARD_TYPE)):
             # peak_freq = freq[np.argpartition(-magnitude, num_peaks)[: num_peaks]]
 
             # 2. Better way
-            peaks_raw, props = find_peaks(magnitude, distance=50)
+            peaks_raw, props = find_peaks(magnitude, distance=150)
             """, height=max(magnitude)/50"""
             """ distance=150 """
             # print("len(peaks_raw) ", len(peaks_raw))
@@ -117,7 +120,7 @@ for f in os.listdir(os.path.join(DIR_IN, KEYBOARD_TYPE)):
             plt.title("key = {}, time = {} s, keyboard = {}".format(label, timestamp, KEYBOARD_TYPE))
             plt.xlabel("Frequency (Hz)")
             plt.ylabel("Amplitude")
-            plt.show()
+            # plt.show()
 
         labels_file.close()
 

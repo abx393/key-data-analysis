@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 from sklearn.manifold import TSNE
 
 # Dimension of the embedded space
-dim = 3
+dim = 2
 
 dir_in = "../features"
 keyboard_type = "mechanical"

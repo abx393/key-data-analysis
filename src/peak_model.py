@@ -6,7 +6,7 @@ import os
 import numpy as np
 import pandas as pd
 
-from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import StandardScaler, LabelBinarizer
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.neural_network import MLPClassifier
 from sklearn.cluster import KMeans
@@ -17,16 +17,17 @@ from sklearn.metrics import accuracy_score, recall_score, precision_score, f1_sc
 
 dir_in = "features"
 keyboard_type = "mechanical"
-model = "KMeans"
+model = "NN"
 
-df = pd.read_csv(os.path.join(dir_in, keyboard_type, "vggish_embeddings.csv"))
+df = pd.read_csv(os.path.join(dir_in, keyboard_type, "peaks.csv"))
 print(df.head())
 
 # Every column except the 0th column is an input feature
 x = np.array(df.iloc[:, 1:])
+labels = np.array(df.iloc[:, 0])
 
-# Key label
-y = np.array(df["key"])
+lb = LabelBinarizer()
+y = lb.fit_transform(labels)
 
 # Split into train and test sets
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2)
@@ -51,16 +52,18 @@ clf.fit(x_train, y_train)
 y_pred = clf.predict(x_test)
 acc = accuracy_score(y_test, y_pred)
 
+labels = set(labels)
 print("Results: \n")
 print("Accuracy: ", acc)
-print("Number of labels: ", len(set(y)))
+print("Number of labels: ", len(labels))
 
 df.set_index("key", inplace=True)
 
-labels = ["a", "space", "backspace"]
+"""
 for key in labels:
     print("Mean: key={}".format(key))
     print(df.loc[key, :].mean())
     print("Variance: key={}".format(key))
     print(df.loc[key, :].var())
     print()
+"""

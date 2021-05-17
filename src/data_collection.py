@@ -9,7 +9,7 @@ CHUNK = 1024
 FORMAT = pyaudio.paInt16
 CHANNELS = 1
 RATE = 44100
-RECORD_SECONDS = 3
+RECORD_SECONDS = 8
 DIR_OUT = "native_raw_data"
 SUBDIR_OUT = "mechanical"
 

@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="824f000d-f08e-4424-9042-b6321c66a2b8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/embeddings_model.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tsne.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/csv-plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/csv-plugin.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/get_time_series.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/get_time_series.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/peak_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/peak_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data_collection.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_collection.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +60,7 @@
       <recent name="C:\Users\aband\PycharmProjects\key-data-analysis\features\mechanical" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.tsne">
+  <component name="RunManager" selected="Python.data_collection">
     <configuration name="average_fft" type="PythonConfigurationType" factoryName="Python">
       <module name="key-data-analysis" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -345,7 +342,7 @@
       <workItem from="1620878521834" duration="2915000" />
       <workItem from="1620926067810" duration="11552000" />
       <workItem from="1620981747714" duration="139000" />
-      <workItem from="1621217284411" duration="1506000" />
+      <workItem from="1621217284411" duration="5582000" />
     </task>
     <servers />
   </component>
@@ -373,61 +370,61 @@
     <state x="658" y="244" key="FileChooserDialogImpl/0.0.1707.920@0.0.1707.920" timestamp="1620978157500" />
     <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040/-3840.-383.1707.920@0.0.1920.1040" timestamp="1621217750705" />
     <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1707.920@0.0.1920.1040" timestamp="1619659989935" />
-    <state width="1877" height="382" key="GridCell.Tab.0.bottom" timestamp="1621218947838">
+    <state width="1877" height="445" key="GridCell.Tab.0.bottom" timestamp="1621226555020">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="424" height="82" key="GridCell.Tab.0.bottom/0.0.1707.920@0.0.1707.920" timestamp="1620981887315" />
     <state width="1877" height="338" key="GridCell.Tab.0.bottom/0.0.1920.1016/-3840.-383.1707.920@0.0.1920.1016" timestamp="1619936618537" />
-    <state width="1877" height="382" key="GridCell.Tab.0.bottom/0.0.1920.1040/-3840.-383.1707.920@0.0.1920.1040" timestamp="1621218947838" />
+    <state width="1877" height="445" key="GridCell.Tab.0.bottom/0.0.1920.1040/-3840.-383.1707.920@0.0.1920.1040" timestamp="1621226555020" />
     <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1707.920@0.0.1920.1040" timestamp="1619715029035" />
-    <state width="1877" height="382" key="GridCell.Tab.0.center" timestamp="1621218947838">
+    <state width="1877" height="445" key="GridCell.Tab.0.center" timestamp="1621226555020">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="424" height="82" key="GridCell.Tab.0.center/0.0.1707.920@0.0.1707.920" timestamp="1620981887315" />
     <state width="1877" height="338" key="GridCell.Tab.0.center/0.0.1920.1016/-3840.-383.1707.920@0.0.1920.1016" timestamp="1619936618536" />
-    <state width="1877" height="382" key="GridCell.Tab.0.center/0.0.1920.1040/-3840.-383.1707.920@0.0.1920.1040" timestamp="1621218947838" />
+    <state width="1877" height="445" key="GridCell.Tab.0.center/0.0.1920.1040/-3840.-383.1707.920@0.0.1920.1040" timestamp="1621226555020" />
     <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1707.920@0.0.1920.1040" timestamp="1619715029035" />
-    <state width="1877" height="382" key="GridCell.Tab.0.left" timestamp="1621218947838">
+    <state width="1877" height="445" key="GridCell.Tab.0.left" timestamp="1621226555020">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="424" height="82" key="GridCell.Tab.0.left/0.0.1707.920@0.0.1707.920" timestamp="1620981887315" />
     <state width="1877" height="338" key="GridCell.Tab.0.left/0.0.1920.1016/-3840.-383.1707.920@0.0.1920.1016" timestamp="1619936618536" />
-    <state width="1877" height="382" key="GridCell.Tab.0.left/0.0.1920.1040/-3840.-383.1707.920@0.0.1920.1040" timestamp="1621218947838" />
+    <state width="1877" height="445" key="GridCell.Tab.0.left/0.0.1920.1040/-3840.-383.1707.920@0.0.1920.1040" timestamp="1621226555019" />
     <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1707.920@0.0.1920.1040" timestamp="1619715029035" />
-    <state width="1877" height="382" key="GridCell.Tab.0.right" timestamp="1621218947838">
+    <state width="1877" height="445" key="GridCell.Tab.0.right" timestamp="1621226555020">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="424" height="82" key="GridCell.Tab.0.right/0.0.1707.920@0.0.1707.920" timestamp="1620981887315" />
     <state width="1877" height="338" key="GridCell.Tab.0.right/0.0.1920.1016/-3840.-383.1707.920@0.0.1920.1016" timestamp="1619936618536" />
-    <state width="1877" height="382" key="GridCell.Tab.0.right/0.0.1920.1040/-3840.-383.1707.920@0.0.1920.1040" timestamp="1621218947838" />
+    <state width="1877" height="445" key="GridCell.Tab.0.right/0.0.1920.1040/-3840.-383.1707.920@0.0.1920.1040" timestamp="1621226555020" />
     <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1707.920@0.0.1920.1040" timestamp="1619715029035" />
-    <state width="1877" height="429" key="GridCell.Tab.1.bottom" timestamp="1621218794443">
+    <state width="1877" height="429" key="GridCell.Tab.1.bottom" timestamp="1621225427664">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1664" height="373" key="GridCell.Tab.1.bottom/0.0.1707.920@0.0.1707.920" timestamp="1620981597180" />
     <state width="1877" height="338" key="GridCell.Tab.1.bottom/0.0.1920.1016/-3840.-383.1707.920@0.0.1920.1016" timestamp="1619936618537" />
-    <state width="1877" height="429" key="GridCell.Tab.1.bottom/0.0.1920.1040/-3840.-383.1707.920@0.0.1920.1040" timestamp="1621218794443" />
+    <state width="1877" height="429" key="GridCell.Tab.1.bottom/0.0.1920.1040/-3840.-383.1707.920@0.0.1920.1040" timestamp="1621225427664" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1707.920@0.0.1920.1040" timestamp="1619661290114" />
-    <state width="1877" height="429" key="GridCell.Tab.1.center" timestamp="1621218794442">
+    <state width="1877" height="429" key="GridCell.Tab.1.center" timestamp="1621225427664">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1664" height="373" key="GridCell.Tab.1.center/0.0.1707.920@0.0.1707.920" timestamp="1620981597180" />
     <state width="1877" height="338" key="GridCell.Tab.1.center/0.0.1920.1016/-3840.-383.1707.920@0.0.1920.1016" timestamp="1619936618537" />
-    <state width="1877" height="429" key="GridCell.Tab.1.center/0.0.1920.1040/-3840.-383.1707.920@0.0.1920.1040" timestamp="1621218794442" />
+    <state width="1877" height="429" key="GridCell.Tab.1.center/0.0.1920.1040/-3840.-383.1707.920@0.0.1920.1040" timestamp="1621225427664" />
     <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1707.920@0.0.1920.1040" timestamp="1619661290114" />
-    <state width="1877" height="429" key="GridCell.Tab.1.left" timestamp="1621218794442">
+    <state width="1877" height="429" key="GridCell.Tab.1.left" timestamp="1621225427664">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1664" height="373" key="GridCell.Tab.1.left/0.0.1707.920@0.0.1707.920" timestamp="1620981597180" />
     <state width="1877" height="338" key="GridCell.Tab.1.left/0.0.1920.1016/-3840.-383.1707.920@0.0.1920.1016" timestamp="1619936618537" />
-    <state width="1877" height="429" key="GridCell.Tab.1.left/0.0.1920.1040/-3840.-383.1707.920@0.0.1920.1040" timestamp="1621218794442" />
+    <state width="1877" height="429" key="GridCell.Tab.1.left/0.0.1920.1040/-3840.-383.1707.920@0.0.1920.1040" timestamp="1621225427664" />
     <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1707.920@0.0.1920.1040" timestamp="1619661290114" />
-    <state width="1877" height="429" key="GridCell.Tab.1.right" timestamp="1621218794443">
+    <state width="1877" height="429" key="GridCell.Tab.1.right" timestamp="1621225427664">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1664" height="373" key="GridCell.Tab.1.right/0.0.1707.920@0.0.1707.920" timestamp="1620981597180" />
     <state width="1877" height="338" key="GridCell.Tab.1.right/0.0.1920.1016/-3840.-383.1707.920@0.0.1920.1016" timestamp="1619936618537" />
-    <state width="1877" height="429" key="GridCell.Tab.1.right/0.0.1920.1040/-3840.-383.1707.920@0.0.1920.1040" timestamp="1621218794443" />
+    <state width="1877" height="429" key="GridCell.Tab.1.right/0.0.1920.1040/-3840.-383.1707.920@0.0.1920.1040" timestamp="1621225427664" />
     <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1707.920@0.0.1920.1040" timestamp="1619661290114" />
     <state x="461" y="163" key="SettingsEditor" timestamp="1620325496082">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -457,11 +454,11 @@
     <SUITE FILE_PATH="coverage/key_data_analysis$get_time_series.coverage" NAME="get_time_series Coverage Results" MODIFIED="1620979201859" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/key_data_analysis$peak_plot.coverage" NAME="peak_plot Coverage Results" MODIFIED="1620325499534" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/key_data_analysis$embeddings_model_py.coverage" NAME="embeddings_model Coverage Results" MODIFIED="1620972332006" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
-    <SUITE FILE_PATH="coverage/key_data_analysis$tsne.coverage" NAME="tsne Coverage Results" MODIFIED="1621218947829" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/key_data_analysis$tsne.coverage" NAME="tsne Coverage Results" MODIFIED="1621223886573" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/key_data_analysis$record.coverage" NAME="data_collection Coverage Results" MODIFIED="1620283430261" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/key_data_analysis$spectrogram.coverage" NAME="spectrogram Coverage Results" MODIFIED="1620283245452" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/key_data_analysis$data_collection.coverage" NAME="data_collection Coverage Results" MODIFIED="1620977840944" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/key_data_analysis$peak_model.coverage" NAME="peak_model Coverage Results" MODIFIED="1621218794428" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/key_data_analysis$data_collection.coverage" NAME="data_collection Coverage Results" MODIFIED="1621226555007" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/key_data_analysis$fft_peak_analysis.coverage" NAME="fft_peak_analysis Coverage Results" MODIFIED="1620324749298" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

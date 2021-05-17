@@ -12,6 +12,9 @@ import matplotlib.pyplot as plt
 
 from sklearn.manifold import TSNE
 
+# Dimension of the embedded space
+dim = 3
+
 dir_in = "../features"
 keyboard_type = "mechanical"
 
@@ -22,15 +25,22 @@ labels = set(df.iloc[:, 0])
 df.set_index("key", inplace=True)
 legend = []
 
-ax = plt.axes(projection="3d")
+if dim == 3:
+    ax = plt.axes(projection="3d")
+
 for label in labels:
     legend.append(label)
     x = np.array(df.loc[label, :])
     print(label)
     print(x.shape)
     print()
-    x_embedded = TSNE(n_components=3).fit_transform(x)
-    ax.scatter3D(x_embedded[:, 0], x_embedded[:, 1], x_embedded[:, 2])
+    x_embedded = TSNE(n_components=dim).fit_transform(x)
+    if dim == 1:
+        plt.scatter(x_embedded, np.zeros(x_embedded.shape))
+    elif dim == 2:
+        plt.scatter(x_embedded[:, 0], x_embedded[:, 1])
+    elif dim == 3:
+        ax.scatter3D(x_embedded[:, 0], x_embedded[:, 1], x_embedded[:, 2])
 
 plt.legend(legend)
 plt.show()

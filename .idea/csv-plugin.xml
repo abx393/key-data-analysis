@@ -10,6 +10,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\features\mechanical\vggish_embeddings.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\features\membrane\peaks.csv">
           <value>
             <Attribute>

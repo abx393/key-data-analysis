@@ -120,7 +120,7 @@ for f in os.listdir(os.path.join(DIR_IN, KEYBOARD_TYPE)):
             plt.title("key = {}, time = {} s, keyboard = {}".format(label, timestamp, KEYBOARD_TYPE))
             plt.xlabel("Frequency (Hz)")
             plt.ylabel("Amplitude")
-            # plt.show()
+            plt.show()
 
         labels_file.close()
 

@@ -19,18 +19,21 @@ dir_in = "features"
 keyboard_type = "mechanical"
 model = "NN"
 
-df = pd.read_csv(os.path.join(dir_in, keyboard_type, "peaks.csv"))
+df = pd.read_csv(os.path.join(dir_in, keyboard_type, "vggish_embeddings.csv"))
 print(df.head())
 
 # Every column except the 0th column is an input feature
 x = np.array(df.iloc[:, 1:])
 labels = np.array(df.iloc[:, 0])
 
-lb = LabelBinarizer()
-y = lb.fit_transform(labels)
+y = np.array([1 if label == "space" else 0 for label in labels])
+print(np.count_nonzero(y))
+print(np.shape(y))
+# lb = LabelBinarizer(pos_label='mouse_click')
+# y = lb.fit_transform(labels)
 
 # Split into train and test sets
-x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2)
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.1)
 
 scaler = StandardScaler()
 scaler.fit(x_train)
@@ -51,10 +54,16 @@ elif model == "KMeans":
 clf.fit(x_train, y_train)
 y_pred = clf.predict(x_test)
 acc = accuracy_score(y_test, y_pred)
+precision = precision_score(y_test, y_pred)
+recall = recall_score(y_test, y_pred)
+f1 = f1_score(y_test, y_pred)
 
-labels = set(labels)
+labels = set(y)
 print("Results: \n")
 print("Accuracy: ", acc)
+print("Precision: ", precision)
+print("Recall: ", recall)
+print("F1 score: ", f1)
 print("Number of labels: ", len(labels))
 
 df.set_index("key", inplace=True)

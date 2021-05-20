@@ -11,9 +11,12 @@ from mpl_toolkits import mplot3d
 import matplotlib.pyplot as plt
 
 from sklearn.manifold import TSNE
+from sklearn.decomposition import PCA
 
 # Dimension of the embedded space
-dim = 2
+dim = 3
+
+model = "PCA"
 
 dir_in = "../features"
 keyboard_type = "mechanical"
@@ -34,7 +37,11 @@ for label in labels:
     print(label)
     print(x.shape)
     print()
-    x_embedded = TSNE(n_components=dim).fit_transform(x)
+    if model ==  "PCA":
+        x_embedded = PCA(n_components=dim).fit_transform(x)
+    elif model == "TSNE":
+        x_embedded = TSNE(n_components=dim).fit_transform(x)
+
     if dim == 1:
         plt.scatter(x_embedded, np.zeros(x_embedded.shape))
     elif dim == 2:
@@ -43,5 +50,6 @@ for label in labels:
         ax.scatter3D(x_embedded[:, 0], x_embedded[:, 1], x_embedded[:, 2])
 
 plt.legend(legend)
+plt.title(model + ": Dimensionality Reduction of Feature Embeddings")
 plt.show()
 print(x_embedded.shape)

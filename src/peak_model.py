@@ -17,23 +17,23 @@ from sklearn.metrics import accuracy_score, recall_score, precision_score, f1_sc
 
 dir_in = "features"
 keyboard_type = "mechanical"
-model = "KNN"
+model = "NN"
 
-df = pd.read_csv(os.path.join(dir_in, keyboard_type, "vggish_embeddings.csv"))
+df = pd.read_csv(os.path.join(dir_in, keyboard_type, "touch_fft.csv"))
 print(df.head())
 
 # Every column except the 0th column is an input feature
 x = np.array(df.iloc[:, 1:])
 labels = np.array(df.iloc[:, 0])
 
-y = np.array([1 if label == "backspace" else 0 for label in labels])
-print(np.count_nonzero(y))
-print(np.shape(y))
-# lb = LabelBinarizer(pos_label='mouse_click')
-# y = lb.fit_transform(labels)
+# y = np.array([1 if label == "backspace" else 0 for label in labels])
+# print(np.count_nonzero(y))
+# print(np.shape(y))
+lb = LabelBinarizer()
+y = lb.fit_transform(labels)
 
 # Split into train and test sets
-x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.1)
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2)
 
 scaler = StandardScaler()
 scaler.fit(x_train)
@@ -53,18 +53,20 @@ elif model == "KMeans":
 
 clf.fit(x_train, y_train)
 y_pred = clf.predict(x_test)
+print("y_pred ", y_pred)
+print("y_test ", y_test)
 acc = accuracy_score(y_test, y_pred)
-precision = precision_score(y_test, y_pred)
-recall = recall_score(y_test, y_pred)
-f1 = f1_score(y_test, y_pred)
+#precision = precision_score(y_test, y_pred)
+#recall = recall_score(y_test, y_pred)
+#f1 = f1_score(y_test, y_pred)
 
-labels = set(y)
+#labels = set(y)
 print("Results: \n")
 print("Accuracy: ", acc)
-print("Precision: ", precision)
-print("Recall: ", recall)
-print("F1 score: ", f1)
-print("Number of labels: ", len(labels))
+#print("Precision: ", precision)
+#print("Recall: ", recall)
+#print("F1 score: ", f1)
+#print("Number of labels: ", len(labels))
 
 df.set_index("key", inplace=True)
 

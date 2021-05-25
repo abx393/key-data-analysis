@@ -17,7 +17,7 @@ from sklearn.metrics import accuracy_score, recall_score, precision_score, f1_sc
 
 dir_in = "features"
 keyboard_type = "mechanical"
-model = "NN"
+model = "KNN"
 
 df = pd.read_csv(os.path.join(dir_in, keyboard_type, "vggish_embeddings.csv"))
 print(df.head())
@@ -26,7 +26,7 @@ print(df.head())
 x = np.array(df.iloc[:, 1:])
 labels = np.array(df.iloc[:, 0])
 
-y = np.array([1 if label == "space" else 0 for label in labels])
+y = np.array([1 if label == "backspace" else 0 for label in labels])
 print(np.count_nonzero(y))
 print(np.shape(y))
 # lb = LabelBinarizer(pos_label='mouse_click')

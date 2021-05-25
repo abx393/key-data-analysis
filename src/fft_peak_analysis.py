@@ -113,14 +113,14 @@ for f in os.listdir(os.path.join(DIR_IN, KEYBOARD_TYPE)):
             # Plot fft
             ax = plt.gca()
             for peak in peaks_raw:
-                ax.text(freq[peak], magnitude[peak], "x")
+                ax.text(freq[peak] - 100, magnitude[peak] - 500, "o", fontsize=20)
             plt.plot(freq, magnitude)
             plt.xlim([0, 6000])
             plt.ylim(bottom=0)
             plt.title("key = {}, time = {} s, keyboard = {}".format(label, timestamp, KEYBOARD_TYPE))
             plt.xlabel("Frequency (Hz)")
             plt.ylabel("Amplitude")
-            plt.show()
+            # plt.show()
 
         labels_file.close()
 

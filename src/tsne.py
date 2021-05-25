@@ -16,7 +16,8 @@ from sklearn.decomposition import PCA
 # Dimension of the embedded space
 dim = 3
 
-model = "PCA"
+# Dimensionality reduction algorithm used
+algorithm = "TSNE"
 
 dir_in = "../features"
 keyboard_type = "mechanical"
@@ -37,9 +38,9 @@ for label in labels:
     print(label)
     print(x.shape)
     print()
-    if model ==  "PCA":
+    if algorithm ==  "PCA":
         x_embedded = PCA(n_components=dim).fit_transform(x)
-    elif model == "TSNE":
+    elif algorithm == "TSNE":
         x_embedded = TSNE(n_components=dim).fit_transform(x)
 
     if dim == 1:
@@ -50,6 +51,6 @@ for label in labels:
         ax.scatter3D(x_embedded[:, 0], x_embedded[:, 1], x_embedded[:, 2])
 
 plt.legend(legend)
-plt.title(model + ": Dimensionality Reduction of Feature Embeddings")
+plt.title(algorithm + ": Dimensionality Reduction of Feature Embeddings")
 plt.show()
 print(x_embedded.shape)

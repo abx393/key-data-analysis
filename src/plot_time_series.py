@@ -88,6 +88,9 @@ def get_touch_fft(res, sample_rate, timestamps, key, features_file):
         touch_samples = np.hanning(len(touch_samples)) * touch_samples
         touch_t = t[peaks[0] - int(sample_rate / 1000 * touch_time / 2) : peaks[0] + int(sample_rate / 1000 + touch_time / 2)]
 
+        if len(touch_samples) == 0:
+            continue
+
         freq = np.fft.rfftfreq(len(touch_samples), 1 / sample_rate)
         magnitude = np.fft.rfft(touch_samples)
 
@@ -100,6 +103,9 @@ def get_touch_fft(res, sample_rate, timestamps, key, features_file):
 
         # Remove higher frequencies
         freq = freq[: 3 * len(freq) // 10]
+        print(freq)
+        np.save(os.path.join(DIR_OUT, KEYBOARD_TYPE, "freq_bins_metadata.npy"), freq)
+
         magnitude = magnitude[: 3 * len(magnitude) // 10]
 
         features_file.write(key)
@@ -121,7 +127,7 @@ if __name__ == "__main__":
     # Number of frequency bins we store
     num_bins = 16
 
-    keys = ["space", "backspace", "a"]
+    keys = ["space", "backspace", "a", "d", "f", "s", "e", "q", "w", "r", "g"]
 
     features_file = open(os.path.join(DIR_OUT, KEYBOARD_TYPE, "touch_fft.csv"), 'w')
     features_file.write("key")

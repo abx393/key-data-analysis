@@ -14,7 +14,7 @@ from sklearn.manifold import TSNE
 from sklearn.decomposition import PCA
 
 # Dimension of the embedded space
-dim = 3
+dim = 2
 
 # Dimensionality reduction algorithm used
 algorithm = "TSNE"
@@ -22,7 +22,7 @@ algorithm = "TSNE"
 dir_in = "../features"
 keyboard_type = "mechanical"
 
-df = pd.read_csv(os.path.join(dir_in, keyboard_type, "vggish_embeddings.csv"))
+df = pd.read_csv(os.path.join(dir_in, keyboard_type, "touch_fft.csv"))
 print(df.head())
 
 labels = set(df.iloc[:, 0])
@@ -37,7 +37,9 @@ for label in labels:
     x = np.array(df.loc[label, :])
     print(label)
     print(x.shape)
+    print(x)
     print()
+
     if algorithm ==  "PCA":
         x_embedded = PCA(n_components=dim).fit_transform(x)
     elif algorithm == "TSNE":

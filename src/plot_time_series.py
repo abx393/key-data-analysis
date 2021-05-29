@@ -60,9 +60,7 @@ def get_time_series(key=None, path=DIR_IN, num_samples=44000, entire=False):
 
     return np.array(res), sample_rate, np.array(timestamps)
 
-def get_touch_fft(res, sample_rate, timestamps, key, features_file):
-    # Length of time for touch peak in ms
-    touch_time = 3
+def get_touch_fft(res, sample_rate, timestamps, key, features_file, touch_time=None, num_bins=None):
 
     for i in range(res.shape[0]):
         plt.title("key =  " + key)
@@ -75,18 +73,18 @@ def get_touch_fft(res, sample_rate, timestamps, key, features_file):
         if len(peaks) >= 3:
             ax.text(t[peaks[0]], 2000, "push", fontsize=12)
             ax.text(t[peaks[len(peaks) - 3]], 2000, "release", fontsize=12)
-        """
 
         for peak in peaks:
             ax.text(t[peak] - 0.001, res[i][peak] - 40, "o")
+        """
 
         # We define the touch peak as the first peak over height 500 in the time series
-        start = peaks[0] - int(sample_rate / 1000 * touch_time / 2)
-        end = peaks[0] + int(sample_rate / 1000 + touch_time / 2)
+        start = peaks[0] - int(sample_rate / 1000 * touch_time / 8)
+        end = peaks[0] + int(sample_rate / 1000 * 7 * touch_time / 8)
 
-        touch_samples = res[i][peaks[0] - int(sample_rate / 1000 * touch_time / 2) : peaks[0] + int(sample_rate / 1000 + touch_time / 2)]
-        touch_samples = np.hanning(len(touch_samples)) * touch_samples
-        touch_t = t[peaks[0] - int(sample_rate / 1000 * touch_time / 2) : peaks[0] + int(sample_rate / 1000 + touch_time / 2)]
+        touch_samples = res[i][start : end]
+        #touch_samples = np.hanning(len(touch_samples)) * touch_samples
+        touch_t = t[start : end]
 
         if len(touch_samples) == 0:
             continue
@@ -102,32 +100,45 @@ def get_touch_fft(res, sample_rate, timestamps, key, features_file):
         magnitude /= np.max(magnitude)
 
         # Remove higher frequencies
-        freq = freq[: 3 * len(freq) // 10]
-        print(freq)
-        np.save(os.path.join(DIR_OUT, KEYBOARD_TYPE, "freq_bins_metadata.npy"), freq)
+        freq = freq[: num_bins]
+        magnitude = magnitude[: num_bins]
+        if len(freq) < num_bins:
+            print("freq len is ", len(freq))
+            print("skipping...")
+            continue
 
-        magnitude = magnitude[: 3 * len(magnitude) // 10]
+        if i == 0:
+            np.save(os.path.join(DIR_OUT, KEYBOARD_TYPE, "freq_bins_metadata.npy"), freq)
 
         features_file.write(key)
-        for i in range(num_bins):
-            features_file.write("," + str(magnitude[i]))
+        for j in range(num_bins):
+            features_file.write("," + str(magnitude[j]))
         features_file.write("\n")
 
-        #plt.plot(touch_t, touch_samples)
-
-        #plt.plot(t, res[i])
-        plt.plot(freq, magnitude)
+        #print(i)
         #plt.xlim(right=10000)
         #plt.ylim(bottom=0)
 
         # plt.scatter(timestamps[i], np.zeros(len(timestamps[i])) + 1000, color='red')
-        #plt.show()
+        """
+        if key == "w":
+            plt.plot(touch_t, touch_samples)
+            #plt.plot(freq, magnitude)
+            #plt.plot(t, res[i])
+            plt.show()
+        """
 
 if __name__ == "__main__":
-    # Number of frequency bins we store
-    num_bins = 16
 
     keys = ["space", "backspace", "a", "d", "f", "s", "e", "q", "w", "r", "g"]
+
+    touch_time = 75
+    max_freq = 6000
+    fs = 44100
+
+    # Number of frequency bins we store
+    num_bins = int(touch_time * fs / 1000 * max_freq / fs)
+    print("num_bins ", num_bins)
 
     features_file = open(os.path.join(DIR_OUT, KEYBOARD_TYPE, "touch_fft.csv"), 'w')
     features_file.write("key")
@@ -138,6 +149,9 @@ if __name__ == "__main__":
 
     for key in keys:
         res, sample_rate, timestamps = get_time_series(key=key, num_samples=20000, entire=False)
-        get_touch_fft(res, sample_rate, timestamps, key, features_file)
+        if sample_rate != fs:
+            raise ValueError("sample_rate != " + fs)
+
+        get_touch_fft(res, sample_rate, timestamps, key, features_file, touch_time=touch_time, num_bins=num_bins)
 
     features_file.close()

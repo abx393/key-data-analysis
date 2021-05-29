@@ -48,8 +48,8 @@ elif model == "SVM":
 elif model == "LR":
     clf = LogisticRegression(max_iter=100)
 elif model == "NN":
-    #clf = MLPClassifier(solver="sgd", alpha=1e-5, max_iter=100000, hidden_layer_sizes=(128))
-    clf = MLPClassifier(solver="adam", max_iter=10000, hidden_layer_sizes=(128))
+    clf = MLPClassifier(solver="sgd", alpha=1e-5, max_iter=100000, hidden_layer_sizes=(128))
+    #clf = MLPClassifier(solver="adam", max_iter=10000, hidden_layer_sizes=(128))
 elif model == "KMeans":
     clf = KMeans(n_clusters=3)
 

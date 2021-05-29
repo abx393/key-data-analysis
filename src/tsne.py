@@ -34,11 +34,17 @@ if dim == 3:
 
 for label in labels:
     legend.append(label)
-    x = np.array(df.loc[label, :])
+    cols = ["freq_bin_" + str(i) for i in range(1, df.shape[1], 10)]
+    x = np.array(df.loc[label, cols])
     print(label)
     print(x.shape)
-    print(x)
     print()
+
+    """
+    # First reduce high-dimensional data with PCA before applying TSNE
+    x = np.array(df.loc[label, :])
+    x = PCA(n_components=50).fit_transform(x)
+    """
 
     if algorithm ==  "PCA":
         x_embedded = PCA(n_components=dim).fit_transform(x)

@@ -26,6 +26,7 @@ df = pd.read_csv(os.path.join(dir_in, keyboard_type, "touch_fft.csv"))
 print(df.head())
 
 labels = set(df.iloc[:, 0])
+#labels = ["f", "backspace", "space"]
 df.set_index("key", inplace=True)
 legend = []
 

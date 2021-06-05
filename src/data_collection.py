@@ -15,6 +15,7 @@ SUBDIR_OUT = "mechanical"
 
 timestamp = time.strftime("%Y-%m-%d-%H-%M-%S")
 ground_truth = "key,time\n"
+last_mouse_scroll = 0
 
 def on_key_press(event):
     global ground_truth
@@ -28,15 +29,16 @@ def on_mouse_click(x, y, button, pressed):
 
 def on_mouse_scroll(x, y, dx, dy):
     time_curr = time.time()
-    """
-    global ground_truth
+    global ground_truth, last_mouse_scroll
+    if time_curr - last_mouse_scroll < 1.0:
+        return
     ground_truth = ground_truth + "mouse_scroll,{}\n".format(time_curr - time_start)
-    print("x ", x)
-    print("y ", y)
-    print("dx ", dx)
-    print("dy ", dy)
-    print()
-    """
+    last_mouse_scroll = time_curr
+    #print("x ", x)
+    #print("y ", y)
+    #print("dx ", dx)
+    #print("dy ", dy)
+    #print()
 
 p = pyaudio.PyAudio()
 

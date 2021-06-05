@@ -5,14 +5,16 @@ import numpy as np
 from matplotlib import pyplot as plt
 
 dir_in = "../features"
-keyboard_type = "mechanical"
+keyboard_type = "membrane"
 
 df = pd.read_csv(os.path.join(dir_in, keyboard_type, "touch_fft.csv"))
 
 labels = set(df["key"])
-labels = ["space", "backspace"]
+#labels = ["space", "backspace"]
 #labels.remove("f")
 #labels.remove("a")
+#labels.remove("e")
+#labels.remove("s")
 
 df.set_index("key", inplace=True)
 

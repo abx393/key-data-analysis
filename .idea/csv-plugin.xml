@@ -31,7 +31,49 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\features\membrane\touch_fft.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\native_raw_data\mechanical\2021-05-05-23-13-48.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\native_raw_data\no_lift\2021-06-04-19-53-11.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\native_raw_data\no_lift\2021-06-04-19-55-39.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\native_raw_data\no_lift\2021-06-04-19-55-55.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\results\membrane\class_distr.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\results\membrane\confusion_matrix.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />

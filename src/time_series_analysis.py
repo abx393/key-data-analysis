@@ -4,7 +4,7 @@ import numpy as np
 from json import JSONDecoder
 import matplotlib.pyplot as plt
 
-DIR_IN = "raw_data"
+DIR_IN = "web_raw_data"
 SUBDIR_IN = "time_series"
 DIR_OUT = "plots"
 SUBDIR_OUT = "time_series"

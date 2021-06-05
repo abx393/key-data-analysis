@@ -11,7 +11,7 @@ from scipy.io import wavfile
 DIR_IN = "../native_raw_data"
 KEYBOARD_TYPE = "mechanical"
 
-def get_time_series(key=None, path=DIR_IN, num_samples=44000):
+def get_time_series(key=None, path=DIR_IN, keyboard_type="mechanical", num_samples=44000):
     res = []
     for f in os.listdir(os.path.join(path, KEYBOARD_TYPE)):
         (basename, extension) = f.split(".")
@@ -40,6 +40,9 @@ def get_time_series(key=None, path=DIR_IN, num_samples=44000):
                 sample_start = int(timestamp * sample_rate - num_samples / 2)
                 sample_end = int(timestamp * sample_rate + num_samples / 2)
 
+                if sample_start < 0 or sample_end > len(samples):
+                    continue
+
                 # number of time samples or number of frequency bins
                 n = sample_end - sample_start
 
@@ -50,7 +53,7 @@ if __name__ == "__main__":
     # print(get_time_series("space"))
     # print(type(get_time_series("space")))
     # print(type(get_time_series("backspace")))
-    res = get_time_series()
+    res = get_time_series(key="mouse_click", keyboard_type="mechanical", num_samples=43000)
     print(res.shape)
     print(type(res))
     print(res)

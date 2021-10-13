@@ -13,7 +13,7 @@ from scipy.signal import find_peaks
 
 DIR_IN = "../native_raw_data"
 DIR_OUT = "../features"
-KEYBOARD_TYPE = "mechanical"
+KEYBOARD_TYPE = "Dell"
 
 def get_time_series(key=None, path=DIR_IN, num_samples=44000, entire=False):
     res = []
@@ -174,9 +174,9 @@ if __name__ == "__main__":
     keys = ["space", "backspace", "a", "d", "f", "s", "e", "q", "w", "r", "g"]
 
     # touch time in milliseconds
-    if KEYBOARD_TYPE == "membrane":
+    if KEYBOARD_TYPE == "HP_Spectre":
         touch_time = 50
-    elif KEYBOARD_TYPE == "mechanical":
+    elif KEYBOARD_TYPE == "Dell":
         touch_time = 50
     else:
         touch_time = 50

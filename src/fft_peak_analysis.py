@@ -13,7 +13,7 @@ from json import JSONDecoder
 
 DIR_IN = "native_raw_data"
 DIR_OUT = "features"
-KEYBOARD_TYPE = "mechanical"
+KEYBOARD_TYPE = "Dell"
 
 # 2 * offset = n (length of FFT)
 offset = 5000

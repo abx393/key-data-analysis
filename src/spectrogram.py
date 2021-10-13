@@ -12,7 +12,7 @@ from json import JSONDecoder
 
 DIR_IN = "native_raw_data"
 DIR_OUT = "plots/spectrograms"
-KEYBOARD_TYPE = "mechanical"
+KEYBOARD_TYPE = "Dell"
 
 for f in os.listdir(os.path.join(DIR_IN, KEYBOARD_TYPE)):
     (basename, extension) = f.split(".")

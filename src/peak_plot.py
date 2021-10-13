@@ -11,7 +11,7 @@ from mpl_toolkits import mplot3d
 import matplotlib.pyplot as plt
 
 DIR_IN = "features"
-KEYBOARD_TYPE = "mechanical"
+KEYBOARD_TYPE = "Dell"
 
 df = pd.read_csv(os.path.join(DIR_IN, KEYBOARD_TYPE, "peaks.csv"))
 keys = set(np.array(df.key))

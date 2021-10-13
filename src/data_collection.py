@@ -11,7 +11,7 @@ CHANNELS = 1
 RATE = 44100
 RECORD_SECONDS = 8
 DIR_OUT = "native_raw_data"
-SUBDIR_OUT = "mechanical"
+SUBDIR_OUT = "Dell"
 
 timestamp = time.strftime("%Y-%m-%d-%H-%M-%S")
 ground_truth = "key,time\n"

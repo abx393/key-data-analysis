@@ -21,15 +21,16 @@ for f in os.listdir(os.path.join(DIR_IN, SUBDIR_IN)):
         keys = np.array(list(labels.values()))
 
         # Plot the 1st difference of the list of timestamps
-        x = np.arange(len(ts) - 1)
-        y = np.diff(ts, n=1)
+        n = 1
+        x = np.arange(len(ts) - n)
+        y = np.diff(ts, n=n)
 
         plt.plot(x, y)
         plt.scatter(x, y)
 
         # Annotate the plot with which keys were pressed
         ax = plt.gca()
-        for i in range(len(keys) - 1):
+        for i in range(len(keys) - n):
             ax.annotate(keys[i] + " -> " + keys[i+1], (i - 0.2, y[i] - 30))
 
         word = ""
@@ -41,4 +42,3 @@ for f in os.listdir(os.path.join(DIR_IN, SUBDIR_IN)):
         plt.ylabel("Time interval (ms)")
         plt.savefig(os.path.join(DIR_OUT, SUBDIR_OUT, word + ".jpg"))
         plt.show()
-

@@ -1,5 +1,5 @@
 """
-Builds and trains ML models on peak data
+Builds and trains ML models on push peak data
 """
 
 import os
@@ -17,8 +17,8 @@ from sklearn.metrics import accuracy_score, recall_score, precision_score, f1_sc
 
 dir_in = "features"
 dir_out = "results"
-keyboard_type = "mechanical"
-model = "SVM"
+keyboard_type = "Dell"
+model = "NN"
 
 df = pd.read_csv(os.path.join(dir_in, keyboard_type, "touch_fft.csv"))
 value_counts = df["key"].value_counts()
@@ -59,7 +59,7 @@ x_train = scaler.transform(x_train)
 x_test = scaler.transform(x_test)
 
 if model == "KNN":
-    clf = KNeighborsClassifier(n_neighbors=5, weights='distance')
+    clf = KNeighborsClassifier(n_neighbors=3, weights='distance')
 elif model == "SVM":
     clf = SVC(probability=True)
 elif model == "LR":

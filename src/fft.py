@@ -12,7 +12,7 @@ from json import JSONDecoder
 
 DIR_IN = "native_raw_data"
 DIR_OUT = "plots/fft"
-KEYBOARD_TYPE = "mechanical"
+KEYBOARD_TYPE = "Dell"
 
 offset = 10000
 

@@ -17,16 +17,18 @@ from sklearn.decomposition import PCA
 dim = 2
 
 # Dimensionality reduction algorithm used
-algorithm = "TSNE"
+algorithm = "t-SNE"
 
 dir_in = "../features"
-keyboard_type = "mechanical"
+keyboard_type = "Dell"
 
-df = pd.read_csv(os.path.join(dir_in, keyboard_type, "touch_fft.csv"))
+input = "touch_fft"
+
+df = pd.read_csv(os.path.join(dir_in, keyboard_type, input + ".csv"))
 print(df.head())
 
 labels = set(df.iloc[:, 0])
-#labels = ["f", "backspace", "space"]
+# labels = ["mouse_click", "mouse_scroll", "a"]
 df.set_index("key", inplace=True)
 legend = []
 
@@ -34,22 +36,29 @@ if dim == 3:
     ax = plt.axes(projection="3d")
 
 for label in labels:
-    legend.append(label)
-    cols = ["freq_bin_" + str(i) for i in range(1, df.shape[1], 10)]
-    x = np.array(df.loc[label, cols])
+
+    if label == "a":
+        legend.append("key")
+    else:
+        legend.append(label)
+
+    if input == "touch_fft":
+        cols = ["freq_bin_" + str(i) for i in range(1, df.shape[1], 10)]
+        x = np.array(df.loc[label, cols])
+    elif input == "vggish_embeddings":
+        x = np.array(df.loc[label])
+
     print(label)
     print(x.shape)
     print()
 
-    """
     # First reduce high-dimensional data with PCA before applying TSNE
     x = np.array(df.loc[label, :])
     x = PCA(n_components=50).fit_transform(x)
-    """
 
     if algorithm ==  "PCA":
         x_embedded = PCA(n_components=dim).fit_transform(x)
-    elif algorithm == "TSNE":
+    elif algorithm == "t-SNE":
         x_embedded = TSNE(n_components=dim).fit_transform(x)
 
     if dim == 1:

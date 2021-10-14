@@ -16,6 +16,15 @@ DIR_OUT = "../features"
 KEYBOARD_TYPE = "HP_Spectre"
 
 def get_time_series(key=None, path=DIR_IN, num_samples=44000, entire=False):
+    """
+    Gets raw audio samples in time domain of the WAV file at `path`
+
+    :param key: the key pressed to limit results to
+    :param path: file path of WAV file
+    :param num_samples:
+    :param entire: whether to return the entire file's audio samples (not just the key requested)
+    :return:2d array containing arrays of audio samples
+    """
     res = []
     timestamps = []
     for f in os.listdir(os.path.join(path, KEYBOARD_TYPE)):
@@ -60,7 +69,18 @@ def get_time_series(key=None, path=DIR_IN, num_samples=44000, entire=False):
 
     return np.array(res), sample_rate, np.array(timestamps)
 
-def get_fft(audio_samples, sample_rate, timestamps, key, features_file, push_window=None, num_bins=None, num_samples=None):
+def get_fft(audio_samples, sample_rate, timestamps, key, features_file, push_window=50, num_bins=None):
+    """
+    Outputs Fourier Transform of raw audio samples to `featuress` directory
+
+    :param audio_samples: raw audio samples in time domain
+    :param sample_rate: sample rate of raw audio
+    :param timestamps: timestamps associated with each audio sample in `audio_samples`
+    :param key: the key whose fft is being computed
+    :param features_file: file to contain the output of the Fourier Transform
+    :param push_window: Time length in ms of the input time domain signal to compute FFT of
+    :param num_bins: Number of frequency bins from fft computation we should output
+    """
 
     for i in range(audio_samples.shape[0]):
         plt.title("key =  " + key)
@@ -210,6 +230,6 @@ if __name__ == "__main__":
         if sample_rate != fs:
             raise ValueError("sample_rate != " + fs)
 
-        get_fft(res, sample_rate, timestamps, key, features_file, push_window=push_window, num_bins=num_bins, num_samples=num_samples)
+        get_fft(res, sample_rate, timestamps, key, features_file, push_window=push_window, num_bins=num_bins)
 
     features_file.close()

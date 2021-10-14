@@ -2,36 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="824f000d-f08e-4424-9042-b6321c66a2b8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/peak_model_aggregate.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/peak_model_generalized.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/csv-plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/csv-plugin.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/mechanical/freq_bins_metadata.npy" beforeDir="false" afterPath="$PROJECT_DIR$/features/Dell/freq_bins_metadata.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/mechanical/peaks.csv" beforeDir="false" afterPath="$PROJECT_DIR$/features/Dell/peaks.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/mechanical/time_samples_metadata.npy" beforeDir="false" afterPath="$PROJECT_DIR$/features/Dell/time_samples_metadata.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/mechanical/touch_fft.csv" beforeDir="false" afterPath="$PROJECT_DIR$/features/Dell/touch_fft.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/mechanical/vggish_embeddings.csv" beforeDir="false" afterPath="$PROJECT_DIR$/features/Dell/vggish_embeddings.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/membrane/freq_bins_metadata.npy" beforeDir="false" afterPath="$PROJECT_DIR$/features/HP_Spectre/freq_bins_metadata.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/membrane/peaks.csv" beforeDir="false" afterPath="$PROJECT_DIR$/features/HP_Spectre/peaks.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/membrane/time_samples_metadata.npy" beforeDir="false" afterPath="$PROJECT_DIR$/features/HP_Spectre/time_samples_metadata.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/membrane/touch_fft.csv" beforeDir="false" afterPath="$PROJECT_DIR$/features/HP_Spectre/touch_fft.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/mechanical/class_distr.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/Dell/class_distr.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/mechanical/confusion_matrix.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/Dell/confusion_matrix.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/membrane/class_distr.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/HP_Spectre/class_distr.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/membrane/confusion_matrix.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/HP_Spectre/confusion_matrix.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/average_fft.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/average_fft.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/coarse_grained_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/coarse_grained_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data_collection.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_collection.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fft.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/fft.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fft_peak_analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/fft_peak_analysis.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/get_time_series.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/get_time_series.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/peak_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/peak_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/peak_plot.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/peak_plot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fft_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/fft_model.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/plot_time_series.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/plot_time_series.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/spectrogram.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/spectrogram.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/time_series_analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/time_series_analysis.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/touch_fft_analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/touch_fft_analysis.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tsne.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tsne.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +61,7 @@
       <recent name="C:\Users\aband\PycharmProjects\key-data-analysis\features\mechanical" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.peak_model">
+  <component name="RunManager" selected="Python.plot_time_series">
     <configuration name="average_fft" type="PythonConfigurationType" factoryName="Python">
       <module name="key-data-analysis" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -176,6 +150,72 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="fft_model" type="PythonConfigurationType" factoryName="Python">
+      <module name="key-data-analysis" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\aband\PycharmProjects\key-data-analysis\venv\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/fft_model.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="fft_model_aggregate.py" type="PythonConfigurationType" factoryName="Python">
+      <module name="key-data-analysis" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\aband\PycharmProjects\key-data-analysis\venv\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/fft_model_aggregate.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="fft_model_generalized" type="PythonConfigurationType" factoryName="Python">
+      <module name="key-data-analysis" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\aband\PycharmProjects\key-data-analysis\venv\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/fft_model_generalizability.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="fft_peak_analysis" type="PythonConfigurationType" factoryName="Python">
       <module name="key-data-analysis" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -212,72 +252,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/get_time_series.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="peak_model" type="PythonConfigurationType" factoryName="Python">
-      <module name="key-data-analysis" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Users\aband\PycharmProjects\key-data-analysis\venv\Scripts\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\aband\PycharmProjects\key-data-analysis\src\peak_model.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="peak_model_aggregate.py" type="PythonConfigurationType" factoryName="Python">
-      <module name="key-data-analysis" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Users\aband\PycharmProjects\key-data-analysis\venv\Scripts\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/peak_model_aggregate.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="peak_model_generalized" type="PythonConfigurationType" factoryName="Python">
-      <module name="key-data-analysis" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Users\aband\PycharmProjects\key-data-analysis\venv\Scripts\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/peak_model_generalized.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -423,10 +397,10 @@
       <item itemvalue="Python.spectrogram" />
       <item itemvalue="Python.average_fft" />
       <item itemvalue="Python.fft_peak_analysis" />
-      <item itemvalue="Python.peak_model" />
+      <item itemvalue="Python.fft_model" />
       <item itemvalue="Python.tsne" />
-      <item itemvalue="Python.peak_model_generalized" />
-      <item itemvalue="Python.peak_model_aggregate.py" />
+      <item itemvalue="Python.fft_model_generalized" />
+      <item itemvalue="Python.fft_model_aggregate.py" />
       <item itemvalue="Python.touch_fft_analysis" />
       <item itemvalue="Python.time_series_analysis" />
       <item itemvalue="Python.coarse_grained_model" />
@@ -482,7 +456,7 @@
       <workItem from="1622913660786" duration="13707000" />
       <workItem from="1633824553397" duration="595000" />
       <workItem from="1634102357234" duration="6482000" />
-      <workItem from="1634161506748" duration="274000" />
+      <workItem from="1634161506748" duration="2986000" />
     </task>
     <servers />
   </component>
@@ -490,26 +464,30 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="310" y="117" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1634169079779">
+      <screen x="0" y="0" width="1707" height="920" />
+    </state>
+    <state x="310" y="117" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1707.920@0.0.1707.920" timestamp="1634169079779" />
     <state x="635" y="217" key="FileChooserDialogImpl" timestamp="1634104323420">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
     <state x="635" y="217" key="FileChooserDialogImpl/0.0.1707.920@0.0.1707.920" timestamp="1634104323420" />
-    <state width="1350" height="303" key="GridCell.Tab.0.bottom" timestamp="1634161786556">
+    <state width="1349" height="303" key="GridCell.Tab.0.bottom" timestamp="1634169253128">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
-    <state width="1350" height="303" key="GridCell.Tab.0.bottom/0.0.1707.920@0.0.1707.920" timestamp="1634161786556" />
-    <state width="1350" height="303" key="GridCell.Tab.0.center" timestamp="1634161786554">
+    <state width="1349" height="303" key="GridCell.Tab.0.bottom/0.0.1707.920@0.0.1707.920" timestamp="1634169253128" />
+    <state width="1349" height="303" key="GridCell.Tab.0.center" timestamp="1634169253126">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
-    <state width="1350" height="303" key="GridCell.Tab.0.center/0.0.1707.920@0.0.1707.920" timestamp="1634161786554" />
-    <state width="1350" height="303" key="GridCell.Tab.0.left" timestamp="1634161786554">
+    <state width="1349" height="303" key="GridCell.Tab.0.center/0.0.1707.920@0.0.1707.920" timestamp="1634169253126" />
+    <state width="1349" height="303" key="GridCell.Tab.0.left" timestamp="1634169253126">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
-    <state width="1350" height="303" key="GridCell.Tab.0.left/0.0.1707.920@0.0.1707.920" timestamp="1634161786554" />
-    <state width="1350" height="303" key="GridCell.Tab.0.right" timestamp="1634161786554">
+    <state width="1349" height="303" key="GridCell.Tab.0.left/0.0.1707.920@0.0.1707.920" timestamp="1634169253126" />
+    <state width="1349" height="303" key="GridCell.Tab.0.right" timestamp="1634169253128">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
-    <state width="1350" height="303" key="GridCell.Tab.0.right/0.0.1707.920@0.0.1707.920" timestamp="1634161786554" />
+    <state width="1349" height="303" key="GridCell.Tab.0.right/0.0.1707.920@0.0.1707.920" timestamp="1634169253128" />
     <state x="552" y="286" key="com.intellij.ide.util.TipDialog" timestamp="1634161507510">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
@@ -525,12 +503,12 @@
     <SUITE FILE_PATH="coverage/key_data_analysis$fft_peak_analysis.coverage" NAME="fft_peak_analysis Coverage Results" MODIFIED="1621533101190" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/key_data_analysis$peak_model_aggregate_py.coverage" NAME="peak_model_aggregate.py Coverage Results" MODIFIED="1634108099005" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/key_data_analysis$time_series_analysis.coverage" NAME="time_series_analysis Coverage Results" MODIFIED="1634161612083" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/key_data_analysis$plot_time_series.coverage" NAME="plot_time_series Coverage Results" MODIFIED="1622867770923" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/key_data_analysis$plot_time_series.coverage" NAME="plot_time_series Coverage Results" MODIFIED="1634169253095" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/key_data_analysis$get_time_series.coverage" NAME="get_time_series Coverage Results" MODIFIED="1622918272214" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/key_data_analysis$coarse_grained_model.coverage" NAME="coarse_grained_model Coverage Results" MODIFIED="1634106619215" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/key_data_analysis$embeddings_model_py.coverage" NAME="embeddings_model Coverage Results" MODIFIED="1620972332006" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/key_data_analysis$data_collection.coverage" NAME="data_collection Coverage Results" MODIFIED="1622918250823" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/key_data_analysis$peak_model.coverage" NAME="peak_model Coverage Results" MODIFIED="1634161768691" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/key_data_analysis$peak_model.coverage" NAME="fft_model Coverage Results" MODIFIED="1634169209024" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/key_data_analysis$touch_fft_analysis.coverage" NAME="touch_fft_analysis Coverage Results" MODIFIED="1622963682360" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/key_data_analysis$peak_model_generalized.coverage" NAME="peak_model_generalized Coverage Results" MODIFIED="1634108314690" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>

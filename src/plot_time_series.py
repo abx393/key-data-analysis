@@ -13,7 +13,7 @@ from scipy.signal import find_peaks
 
 DIR_IN = "../native_raw_data"
 DIR_OUT = "../features"
-KEYBOARD_TYPE = "Dell"
+KEYBOARD_TYPE = "HP_Spectre"
 
 def get_time_series(key=None, path=DIR_IN, num_samples=44000, entire=False):
     res = []
@@ -60,12 +60,14 @@ def get_time_series(key=None, path=DIR_IN, num_samples=44000, entire=False):
 
     return np.array(res), sample_rate, np.array(timestamps)
 
-def get_touch_fft(res, sample_rate, timestamps, key, features_file, touch_time=None, num_bins=None, num_samples=None):
+def get_fft(audio_samples, sample_rate, timestamps, key, features_file, push_window=None, num_bins=None, num_samples=None):
 
-    for i in range(res.shape[0]):
+    for i in range(audio_samples.shape[0]):
         plt.title("key =  " + key)
-        t = np.arange(0, res.shape[1] / sample_rate, 1.0 / sample_rate)
-        peaks, props = find_peaks(res[i], height=500, distance=sample_rate/500)
+        t = np.arange(0, audio_samples.shape[1] / sample_rate, 1.0 / sample_rate)
+
+        # We define the touch peak as the first peak over height 500 in the time series
+        peaks, props = find_peaks(audio_samples[i], height=500, distance=sample_rate/500)
         ax = plt.gca()
         if len(peaks) == 0:
             continue
@@ -78,11 +80,11 @@ def get_touch_fft(res, sample_rate, timestamps, key, features_file, touch_time=N
             ax.text(t[peak] - 0.001, res[i][peak] - 40, "o")
         """
 
-        # We define the touch peak as the first peak over height 500 in the time series
-        start = peaks[0] - int(sample_rate / 1000 * touch_time / 8)
-        end = peaks[0] + int(sample_rate / 1000 * 7 * touch_time / 8)
+        # The push peak region is defined such that the touch peak is at 1/8 of the push region length
+        start = peaks[0] - int(sample_rate / 1000 * push_window / 8)
+        end = peaks[0] + int(sample_rate / 1000 * 7 * push_window / 8)
 
-        touch_samples = res[i][start : end]
+        touch_samples = audio_samples[i][start : end]
         #touch_samples = np.hanning(len(touch_samples)) * touch_samples
         touch_t = t[start : end]
 
@@ -124,7 +126,7 @@ def get_touch_fft(res, sample_rate, timestamps, key, features_file, touch_time=N
             plt.show()
         """
 
-def get_touch_time_series(res, sample_rate, timestamps, key, features_file, touch_time=None, num_bins=None, num_samples=None):
+def get_touch_time_series(res, sample_rate, timestamps, key, features_file, push_window=None, num_bins=None, num_samples=None):
     for i in range(res.shape[0]):
         plt.title("key =  " + key)
         t = np.arange(0, res.shape[1] / sample_rate, 1.0 / sample_rate)
@@ -142,8 +144,8 @@ def get_touch_time_series(res, sample_rate, timestamps, key, features_file, touc
         """
 
         # We define the touch peak as the first peak over height 500 in the time series
-        start = peaks[0] - int(sample_rate / 1000 * touch_time / 8)
-        end = peaks[0] + int(sample_rate / 1000 * 7 * touch_time / 8)
+        start = peaks[0] - int(sample_rate / 1000 * push_window / 8)
+        end = peaks[0] + int(sample_rate / 1000 * 7 * push_window / 8)
 
         touch_samples = res[i][start : end]
         #touch_samples = np.hanning(len(touch_samples)) * touch_samples
@@ -173,24 +175,24 @@ if __name__ == "__main__":
 
     keys = ["space", "backspace", "a", "d", "f", "s", "e", "q", "w", "r", "g"]
 
-    # touch time in milliseconds
+    # push peak window length in milliseconds
     if KEYBOARD_TYPE == "HP_Spectre":
-        touch_time = 50
+        push_window = 50
     elif KEYBOARD_TYPE == "Dell":
-        touch_time = 50
+        push_window = 50
     else:
-        touch_time = 50
+        push_window = 50
 
     max_freq = 6000
     fs = 44100
 
     # Number of frequency bins we store
-    num_bins = int(touch_time * fs / 1000 * max_freq / fs)
-    num_samples = int(touch_time * fs / 1000)
+    num_bins = int(push_window * fs / 1000 * max_freq / fs)
+    num_samples = int(push_window * fs / 1000)
     print("num_bins ", num_bins)
     print("num_samples ", num_samples)
 
-    features_file = open(os.path.join(DIR_OUT, KEYBOARD_TYPE, "touch_fft.csv"), 'w')
+    features_file = open(os.path.join(DIR_OUT, KEYBOARD_TYPE, "push_fft.csv"), 'w')
     features_file.write("key")
 
     for i in range(num_bins):
@@ -208,6 +210,6 @@ if __name__ == "__main__":
         if sample_rate != fs:
             raise ValueError("sample_rate != " + fs)
 
-        get_touch_fft(res, sample_rate, timestamps, key, features_file, touch_time=touch_time, num_bins=num_bins, num_samples=num_samples)
+        get_fft(res, sample_rate, timestamps, key, features_file, push_window=push_window, num_bins=num_bins, num_samples=num_samples)
 
     features_file.close()

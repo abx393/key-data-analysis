@@ -17,10 +17,10 @@ from sklearn.metrics import accuracy_score, recall_score, precision_score, f1_sc
 
 dir_in = "features"
 dir_out = "results"
-keyboard_type = "Dell"
+keyboard_type = "HP_Spectre"
 model = "NN"
 
-df = pd.read_csv(os.path.join(dir_in, keyboard_type, "touch_fft.csv"))
+df = pd.read_csv(os.path.join(dir_in, keyboard_type, "push_fft.csv"))
 value_counts = df["key"].value_counts()
 print(value_counts)
 

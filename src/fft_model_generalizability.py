@@ -1,5 +1,5 @@
 """
-Builds and trains ML models on push peaks of one keyboard and tests on the other
+Builds and trains ML models on push peaks of one keyboard and tests on the other.
 """
 
 import os

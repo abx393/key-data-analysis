@@ -1,6 +1,6 @@
 """
-Uses t-SNE dimensionality reduction to visualize VGGish feature embeddings.
-Reduces 128-dimensional VGGish feature embeddings to k=2 or k=3 dimensions.
+Uses t-SNE dimensionality reduction to visualize raw, high-dimensional feature vectors.
+ie., reduces 128-dimensional VGGish feature embeddings to k=2 or k=3 dimensions.
 """
 
 import os

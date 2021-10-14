@@ -1,3 +1,7 @@
+"""
+Builds and trains ML model to classify mouse press, mouse scroll, and key press.
+"""
+
 import os
 import pandas as pd
 import numpy as np

@@ -1,5 +1,5 @@
 """
-Builds and trains ML models on push peak data
+Builds and trains ML models on push peak data.
 """
 
 import os

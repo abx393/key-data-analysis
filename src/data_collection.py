@@ -1,3 +1,7 @@
+"""
+Script to collect audio of key presses, mouse clicks, and mouse scrolls
+"""
+
 import os
 import time
 import keyboard

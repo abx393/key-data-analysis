@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="824f000d-f08e-4424-9042-b6321c66a2b8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/csv-plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/csv-plugin.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/plot_time_series.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/plot_time_series.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tsne.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tsne.py" afterDir="false" />
-    </list>
+    <list default="true" id="824f000d-f08e-4424-9042-b6321c66a2b8" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -457,7 +452,7 @@
       <workItem from="1633824553397" duration="595000" />
       <workItem from="1634102357234" duration="6482000" />
       <workItem from="1634161506748" duration="6655000" />
-      <workItem from="1634328420472" duration="1178000" />
+      <workItem from="1634328420472" duration="1517000" />
     </task>
     <servers />
   </component>
@@ -473,22 +468,22 @@
       <screen x="0" y="0" width="1707" height="920" />
     </state>
     <state x="635" y="217" key="FileChooserDialogImpl/0.0.1707.920@0.0.1707.920" timestamp="1634104323420" />
-    <state width="1347" height="303" key="GridCell.Tab.0.bottom" timestamp="1634334015956">
+    <state width="1347" height="303" key="GridCell.Tab.0.bottom" timestamp="1634334043622">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
-    <state width="1347" height="303" key="GridCell.Tab.0.bottom/0.0.1707.920@0.0.1707.920" timestamp="1634334015956" />
-    <state width="1347" height="303" key="GridCell.Tab.0.center" timestamp="1634334015956">
+    <state width="1347" height="303" key="GridCell.Tab.0.bottom/0.0.1707.920@0.0.1707.920" timestamp="1634334043622" />
+    <state width="1347" height="303" key="GridCell.Tab.0.center" timestamp="1634334043621">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
-    <state width="1347" height="303" key="GridCell.Tab.0.center/0.0.1707.920@0.0.1707.920" timestamp="1634334015956" />
-    <state width="1347" height="303" key="GridCell.Tab.0.left" timestamp="1634334015955">
+    <state width="1347" height="303" key="GridCell.Tab.0.center/0.0.1707.920@0.0.1707.920" timestamp="1634334043621" />
+    <state width="1347" height="303" key="GridCell.Tab.0.left" timestamp="1634334043621">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
-    <state width="1347" height="303" key="GridCell.Tab.0.left/0.0.1707.920@0.0.1707.920" timestamp="1634334015955" />
-    <state width="1347" height="303" key="GridCell.Tab.0.right" timestamp="1634334015956">
+    <state width="1347" height="303" key="GridCell.Tab.0.left/0.0.1707.920@0.0.1707.920" timestamp="1634334043621" />
+    <state width="1347" height="303" key="GridCell.Tab.0.right" timestamp="1634334043621">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
-    <state width="1347" height="303" key="GridCell.Tab.0.right/0.0.1707.920@0.0.1707.920" timestamp="1634334015956" />
+    <state width="1347" height="303" key="GridCell.Tab.0.right/0.0.1707.920@0.0.1707.920" timestamp="1634334043621" />
     <state x="552" y="286" key="com.intellij.ide.util.TipDialog" timestamp="1634328431377">
       <screen x="0" y="0" width="1707" height="920" />
     </state>

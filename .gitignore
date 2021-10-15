@@ -123,3 +123,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Raw data
+native_raw_data/
+web_raw_data/

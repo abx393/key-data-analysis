@@ -20,9 +20,9 @@ dim = 2
 algorithm = "t-SNE"
 
 dir_in = "../features"
-keyboard_type = "Dell"
+keyboard_type = "HP_Spectre"
 
-input = "touch_fft"
+input = "push_fft"
 
 df = pd.read_csv(os.path.join(dir_in, keyboard_type, input + ".csv"))
 print(df.head())
@@ -42,7 +42,7 @@ for label in labels:
     else:
         legend.append(label)
 
-    if input == "touch_fft":
+    if input == "push_fft":
         cols = ["freq_bin_" + str(i) for i in range(1, df.shape[1], 10)]
         x = np.array(df.loc[label, cols])
     elif input == "vggish_embeddings":

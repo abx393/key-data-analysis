@@ -13,14 +13,15 @@ from scipy.signal import find_peaks
 
 DIR_IN = "../native_raw_data"
 DIR_OUT = "../features"
-KEYBOARD_TYPE = "HP_Spectre"
+KEYBOARD_TYPE = "Dell"
 
 def get_time_series(key=None, path=DIR_IN, num_samples=44000, entire=False):
     """
-    Gets raw audio samples in time domain of the WAV file at `path`
+    Gets raw audio samples in time domain for all instances of the key press of `key`
+    in all WAV files in the directory at `path`.
 
-    :param key: the key pressed to limit results to
-    :param path: file path of WAV file
+    :param key: the key whose time series audio is desired
+    :param path: file path of directory containing WAV files
     :param num_samples:
     :param entire: whether to return the entire file's audio samples (not just the key requested)
     :return:2d array containing arrays of audio samples
@@ -195,7 +196,7 @@ if __name__ == "__main__":
 
     keys = ["space", "backspace", "a", "d", "f", "s", "e", "q", "w", "r", "g"]
 
-    # push peak window length in milliseconds
+    # push peak time window length in milliseconds
     if KEYBOARD_TYPE == "HP_Spectre":
         push_window = 50
     elif KEYBOARD_TYPE == "Dell":
@@ -226,10 +227,10 @@ if __name__ == "__main__":
     """
 
     for key in keys:
-        res, sample_rate, timestamps = get_time_series(key=key, num_samples=35000, entire=False)
+        audio_samples, sample_rate, timestamps = get_time_series(key=key, num_samples=35000, entire=False)
         if sample_rate != fs:
             raise ValueError("sample_rate != " + fs)
 
-        get_fft(res, sample_rate, timestamps, key, features_file, push_window=push_window, num_bins=num_bins)
+        get_fft(audio_samples, sample_rate, timestamps, key, features_file, push_window=push_window, num_bins=num_bins)
 
     features_file.close()

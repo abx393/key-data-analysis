@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="824f000d-f08e-4424-9042-b6321c66a2b8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/coarse_grained_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/coarse_grained_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data_collection.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_collection.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fft_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/fft_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fft_model_aggregate.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/fft_model_aggregate.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fft_model_generalizability.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/fft_model_generalizability.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/csv-plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/csv-plugin.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/plot_time_series.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/plot_time_series.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tsne.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tsne.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -63,7 +61,7 @@
       <recent name="C:\Users\aband\PycharmProjects\key-data-analysis\features\mechanical" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.fft_model">
+  <component name="RunManager" selected="Python.plot_time_series">
     <configuration name="average_fft" type="PythonConfigurationType" factoryName="Python">
       <module name="key-data-analysis" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -458,7 +456,8 @@
       <workItem from="1622913660786" duration="13707000" />
       <workItem from="1633824553397" duration="595000" />
       <workItem from="1634102357234" duration="6482000" />
-      <workItem from="1634161506748" duration="5871000" />
+      <workItem from="1634161506748" duration="6655000" />
+      <workItem from="1634328420472" duration="1178000" />
     </task>
     <servers />
   </component>
@@ -474,38 +473,38 @@
       <screen x="0" y="0" width="1707" height="920" />
     </state>
     <state x="635" y="217" key="FileChooserDialogImpl/0.0.1707.920@0.0.1707.920" timestamp="1634104323420" />
-    <state width="1349" height="303" key="GridCell.Tab.0.bottom" timestamp="1634169311168">
+    <state width="1347" height="303" key="GridCell.Tab.0.bottom" timestamp="1634334015956">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
-    <state width="1349" height="303" key="GridCell.Tab.0.bottom/0.0.1707.920@0.0.1707.920" timestamp="1634169311168" />
-    <state width="1349" height="303" key="GridCell.Tab.0.center" timestamp="1634169311168">
+    <state width="1347" height="303" key="GridCell.Tab.0.bottom/0.0.1707.920@0.0.1707.920" timestamp="1634334015956" />
+    <state width="1347" height="303" key="GridCell.Tab.0.center" timestamp="1634334015956">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
-    <state width="1349" height="303" key="GridCell.Tab.0.center/0.0.1707.920@0.0.1707.920" timestamp="1634169311168" />
-    <state width="1349" height="303" key="GridCell.Tab.0.left" timestamp="1634169311168">
+    <state width="1347" height="303" key="GridCell.Tab.0.center/0.0.1707.920@0.0.1707.920" timestamp="1634334015956" />
+    <state width="1347" height="303" key="GridCell.Tab.0.left" timestamp="1634334015955">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
-    <state width="1349" height="303" key="GridCell.Tab.0.left/0.0.1707.920@0.0.1707.920" timestamp="1634169311168" />
-    <state width="1349" height="303" key="GridCell.Tab.0.right" timestamp="1634169311168">
+    <state width="1347" height="303" key="GridCell.Tab.0.left/0.0.1707.920@0.0.1707.920" timestamp="1634334015955" />
+    <state width="1347" height="303" key="GridCell.Tab.0.right" timestamp="1634334015956">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
-    <state width="1349" height="303" key="GridCell.Tab.0.right/0.0.1707.920@0.0.1707.920" timestamp="1634169311168" />
-    <state x="552" y="286" key="com.intellij.ide.util.TipDialog" timestamp="1634161507510">
+    <state width="1347" height="303" key="GridCell.Tab.0.right/0.0.1707.920@0.0.1707.920" timestamp="1634334015956" />
+    <state x="552" y="286" key="com.intellij.ide.util.TipDialog" timestamp="1634328431377">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
-    <state x="552" y="286" key="com.intellij.ide.util.TipDialog/0.0.1707.920@0.0.1707.920" timestamp="1634161507510" />
+    <state x="552" y="286" key="com.intellij.ide.util.TipDialog/0.0.1707.920@0.0.1707.920" timestamp="1634328431377" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/key_data_analysis$average_fft.coverage" NAME="average_fft Coverage Results" MODIFIED="1619715684449" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/key_data_analysis$fft.coverage" NAME="fft Coverage Results" MODIFIED="1621966677788" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/key_data_analysis$peak_plot.coverage" NAME="peak_plot Coverage Results" MODIFIED="1620325499534" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/key_data_analysis$tsne.coverage" NAME="tsne Coverage Results" MODIFIED="1634106994691" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/key_data_analysis$tsne.coverage" NAME="tsne Coverage Results" MODIFIED="1634173072605" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/key_data_analysis$record.coverage" NAME="data_collection Coverage Results" MODIFIED="1620283430261" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/key_data_analysis$spectrogram.coverage" NAME="spectrogram Coverage Results" MODIFIED="1620283245452" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/key_data_analysis$fft_peak_analysis.coverage" NAME="fft_peak_analysis Coverage Results" MODIFIED="1621533101190" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/key_data_analysis$peak_model_aggregate_py.coverage" NAME="peak_model_aggregate.py Coverage Results" MODIFIED="1634108099005" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/key_data_analysis$time_series_analysis.coverage" NAME="time_series_analysis Coverage Results" MODIFIED="1634161612083" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/key_data_analysis$plot_time_series.coverage" NAME="plot_time_series Coverage Results" MODIFIED="1634169253095" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/key_data_analysis$plot_time_series.coverage" NAME="plot_time_series Coverage Results" MODIFIED="1634334015937" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/key_data_analysis$get_time_series.coverage" NAME="get_time_series Coverage Results" MODIFIED="1622918272214" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/key_data_analysis$coarse_grained_model.coverage" NAME="coarse_grained_model Coverage Results" MODIFIED="1634106619215" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/key_data_analysis$embeddings_model_py.coverage" NAME="embeddings_model Coverage Results" MODIFIED="1620972332006" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />

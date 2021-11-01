@@ -13,9 +13,9 @@ CHUNK = 1024
 FORMAT = pyaudio.paInt16
 CHANNELS = 1
 RATE = 44100
-RECORD_SECONDS = 8
-DIR_OUT = "native_raw_data"
-SUBDIR_OUT = "Dell"
+RECORD_SECONDS = 30
+DIR_OUT = "native_raw_data_time_series"
+SUBDIR_OUT = "HP_Spectre"
 
 timestamp = time.strftime("%Y-%m-%d-%H-%M-%S")
 ground_truth = "key,time\n"
@@ -38,11 +38,6 @@ def on_mouse_scroll(x, y, dx, dy):
         return
     ground_truth = ground_truth + "mouse_scroll,{}\n".format(time_curr - time_start)
     last_mouse_scroll = time_curr
-    #print("x ", x)
-    #print("y ", y)
-    #print("dx ", dx)
-    #print("dy ", dy)
-    #print()
 
 p = pyaudio.PyAudio()
 

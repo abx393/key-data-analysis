@@ -127,3 +127,4 @@ dmypy.json
 # Raw data
 native_raw_data/
 web_raw_data/
+native_raw_data_time_series/

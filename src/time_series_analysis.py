@@ -1,44 +1,175 @@
+"""
+Aggregate the time distances between consecutive key presses for each possible pair of keys.
+"""
+
 import os
 import numpy as np
-
-from json import JSONDecoder
 import matplotlib.pyplot as plt
+import constants
+from statistics import median, mean
 
-DIR_IN = "web_raw_data"
-SUBDIR_IN = "time_series"
-DIR_OUT = "plots"
-SUBDIR_OUT = "time_series"
+def handle(func, arr):
+    try:
+        return func(arr)
+    except:
+        return np.nan
 
-for f in os.listdir(os.path.join(DIR_IN, SUBDIR_IN)):
+OUTLIER_CUTOFF = 0.40
+
+DIR_IN = "../native_raw_data_time_series"
+KEYBOARD = "HP_Spectre"
+
+DIR_OUT = "../features/time_series"
+
+# either 'mean' or 'median'
+CENTER = "mean"
+
+features = open(os.path.join(DIR_OUT, "key_pairs.csv"), 'w')
+features.write("prev_key,curr_key,time_delay\n")
+
+time_delay_by_key_pair = [[[] for i in range(len(constants.KEY_MAP))] for j in range(len(constants.KEY_MAP))]
+time_delay_by_finger_pair = [[[] for i in range(len(constants.FINGERS))] for j in range(len(constants.FINGERS))]
+
+count = 0
+for f in os.listdir(os.path.join(DIR_IN, KEYBOARD)):
     (basename, extension) = f.split(".")
+    print("basename ", basename)
+    if extension != "csv":
+        continue
 
-    if extension == "json":
-        labels_file = open(os.path.join(DIR_IN, SUBDIR_IN, f))
-        labels = JSONDecoder().decode(labels_file.read())
+    with open(os.path.join(DIR_IN, KEYBOARD, f), 'r') as fr:
+        prev_key = ""
+        prev_time = 0
+        i = 0
+        for x in fr:
+            if i > 0:
+                try:
+                    [curr_key, curr_time] = x.split(',')
+                except:
+                    print("i=", i)
+                    print("x=", x)
 
-        t_prev = 0
-        ts = np.asarray(list(labels.keys()), dtype=np.int)
-        keys = np.array(list(labels.values()))
+                curr_time = float(curr_time)
+                time_delay = curr_time - prev_time
 
-        # Plot the 1st difference of the list of timestamps
-        n = 1
-        x = np.arange(len(ts) - n)
-        y = np.diff(ts, n=n)
+                try:
+                    prev_key_index = constants.KEY_MAP.index(prev_key)
+                    curr_key_index = constants.KEY_MAP.index(curr_key)
 
-        plt.plot(x, y)
-        plt.scatter(x, y)
+                    prev_finger_index = constants.FINGERS.index(constants.FINGER_MAP[prev_key_index])
+                    curr_finger_index = constants.FINGERS.index(constants.FINGER_MAP[curr_key_index])
+                except:
+                    print("Key {} or {} not in key map".format(prev_key, curr_key))
 
-        # Annotate the plot with which keys were pressed
-        ax = plt.gca()
-        for i in range(len(keys) - n):
-            ax.annotate(keys[i] + " -> " + keys[i+1], (i - 0.2, y[i] - 30))
+                if prev_key != "space" and time_delay < OUTLIER_CUTOFF:
 
-        word = ""
-        for key in keys:
-            word += key
+                    time_delay_by_key_pair[prev_key_index][curr_key_index].append(time_delay)
 
-        plt.title(word)
-        plt.ylim([0, 300])
-        plt.ylabel("Time interval (ms)")
-        plt.savefig(os.path.join(DIR_OUT, SUBDIR_OUT, word + ".jpg"))
-        plt.show()
+                    features.write("{},{},{}\n".format(prev_key, curr_key, time_delay))
+
+                    time_delay_by_finger_pair[prev_finger_index][curr_finger_index].append(time_delay)
+
+                prev_time = curr_time
+                prev_key = curr_key
+
+            i += 1
+    count+= 1
+
+features.close()
+
+# Plot average time delay for all key pairs
+fig, ax = plt.subplots()
+if CENTER == "mean":
+    im = ax.imshow([[handle(mean, arr) for arr in arr2] for arr2 in time_delay_by_key_pair])
+elif CENTER == "median":
+    im = ax.imshow([[handle(median, arr) for arr in arr2] for arr2 in time_delay_by_key_pair])
+
+for i in range(len(time_delay_by_key_pair)):
+    for j in range(len(time_delay_by_key_pair[i])):
+        try:
+            if CENTER == "mean":
+                text = ax.text(j, i, round(handle(mean, time_delay_by_key_pair[i][j]), 2), ha="center", va="center", color="w")
+            elif CENTER == "median":
+                text = ax.text(j, i, round(handle(median, time_delay_by_key_pair[i][j]), 2), ha="center", va="center", color="w")
+        except:
+            text = ax.text(j, i, "NaN", ha="center", va="center", color="w")
+
+        text.set_color('black')
+        text.set_size(8)
+
+ax.set_title("Average Time Delay (s)")
+labels = [(constants.FINGER_MAP[i] + "    " + constants.KEY_MAP[i]) for i in range(len(constants.KEY_MAP))]
+ax.set_xticks(np.arange(len(constants.KEY_MAP)))
+ax.set_xticklabels(labels, rotation='vertical')
+ax.set_yticks(np.arange(len(constants.KEY_MAP)))
+ax.set_yticklabels(labels)
+
+fig.tight_layout()
+plt.show()
+plt.close()
+
+# Plot number of data points for all key pairs
+fig, ax = plt.subplots()
+im = ax.imshow([[len(arr) for arr in arr2] for arr2 in time_delay_by_key_pair], cmap='hot', interpolation='nearest')
+for i in range(len(time_delay_by_key_pair)):
+    for j in range(len(time_delay_by_key_pair[i])):
+        text = ax.text(j, i, len(time_delay_by_key_pair[i][j]), ha="center", va="center", color="w")
+        text.set_color('black')
+        text.set_size(8)
+
+labels = [(constants.FINGER_MAP[i] + "    " + constants.KEY_MAP[i]) for i in range(len(constants.KEY_MAP))]
+ax.set_title("Number of Data Points for Each Key Pair")
+ax.set_xticks(np.arange(len(constants.KEY_MAP)))
+ax.set_xticklabels(labels, rotation='vertical')
+ax.set_yticks(np.arange(len(constants.KEY_MAP)))
+ax.set_yticklabels(labels)
+
+fig.tight_layout()
+plt.show()
+
+# Plot average time delay for all finger pairs
+fig, ax = plt.subplots()
+if CENTER == "mean":
+    im = ax.imshow([[handle(mean, arr) for arr in arr2] for arr2 in time_delay_by_finger_pair])
+elif CENTER == "median":
+    im = ax.imshow([[handle(median, arr) for arr in arr2] for arr2 in time_delay_by_finger_pair])
+
+for i in range(len(time_delay_by_finger_pair)):
+    for j in range(len(time_delay_by_finger_pair[i])):
+        if CENTER == "mean":
+            text = ax.text(j, i, round(handle(mean, time_delay_by_finger_pair[i][j]), 2), ha="center", va="center", color="w")
+        elif CENTER == "median":
+            text = ax.text(j, i, round(handle(median, time_delay_by_finger_pair[i][j]), 2), ha="center", va="center", color="w")
+
+        text.set_color('black')
+        text.set_size(8)
+
+ax.set_title("Average Time Delay By Finger Pair (s)")
+labels = [constants.FINGERS[i] for i in range(len(constants.FINGERS))]
+ax.set_xticks(np.arange(len(constants.FINGERS)))
+ax.set_xticklabels(labels, rotation='vertical')
+ax.set_yticks(np.arange(len(constants.FINGERS)))
+ax.set_yticklabels(labels)
+
+fig.tight_layout()
+plt.show()
+
+# Plot number of data points for all finger pairs
+fig, ax = plt.subplots()
+im = ax.imshow([[len(arr) for arr in arr2] for arr2 in time_delay_by_finger_pair], cmap='hot', interpolation='nearest')
+for i in range(len(time_delay_by_finger_pair)):
+    for j in range(len(time_delay_by_finger_pair[i])):
+        text = ax.text(j, i, len(time_delay_by_finger_pair[i][j]), ha="center", va="center", color="w")
+        text.set_color('black')
+        text.set_size(8)
+
+labels = [constants.FINGERS[i] for i in range(len(constants.FINGERS))]
+ax.set_title("Number of Data Points for All Finger Pairs")
+ax.set_xticks(np.arange(len(constants.FINGERS)))
+ax.set_xticklabels(labels, rotation='vertical')
+ax.set_yticks(np.arange(len(constants.FINGERS)))
+ax.set_yticklabels(labels)
+
+fig.tight_layout()
+plt.show()
+

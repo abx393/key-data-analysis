@@ -1,3 +1,7 @@
+"""
+Plot the time distance between consecutive key presses for various words.
+"""
+
 import os
 import numpy as np
 

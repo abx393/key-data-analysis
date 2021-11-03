@@ -24,8 +24,11 @@ DIR_OUT = "../features/time_series"
 # either 'mean' or 'median'
 CENTER = "mean"
 
-features = open(os.path.join(DIR_OUT, "key_pairs.csv"), 'w')
-features.write("prev_key,curr_key,time_delay\n")
+nn_features = open(os.path.join(DIR_OUT, "key_pairs.csv"), 'w')
+nn_features.write("prev_key,curr_key,time_delay\n")
+
+lstm_features = open(os.path.join(DIR_OUT, "key_forecasting.csv"), 'w')
+lstm_features.write("prev_")
 
 time_delay_by_key_pair = [[[] for i in range(len(constants.KEY_MAP))] for j in range(len(constants.KEY_MAP))]
 time_delay_by_finger_pair = [[[] for i in range(len(constants.FINGERS))] for j in range(len(constants.FINGERS))]
@@ -65,7 +68,7 @@ for f in os.listdir(os.path.join(DIR_IN, KEYBOARD)):
 
                     time_delay_by_key_pair[prev_key_index][curr_key_index].append(time_delay)
 
-                    features.write("{},{},{}\n".format(prev_key, curr_key, time_delay))
+                    nn_features.write("{},{},{}\n".format(prev_key, curr_key, time_delay))
 
                     time_delay_by_finger_pair[prev_finger_index][curr_finger_index].append(time_delay)
 
@@ -75,7 +78,7 @@ for f in os.listdir(os.path.join(DIR_IN, KEYBOARD)):
             i += 1
     count+= 1
 
-features.close()
+nn_features.close()
 
 # Plot average time delay for all key pairs
 fig, ax = plt.subplots()
@@ -172,4 +175,3 @@ ax.set_yticklabels(labels)
 
 fig.tight_layout()
 plt.show()
-

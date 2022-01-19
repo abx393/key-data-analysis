@@ -13,8 +13,8 @@ CHUNK = 1024
 FORMAT = pyaudio.paInt16
 CHANNELS = 1
 RATE = 44100
-RECORD_SECONDS = 30
-DIR_OUT = "native_raw_data_time_series"
+RECORD_SECONDS = 5
+DIR_OUT = "native_raw_data_time_series_words"
 SUBDIR_OUT = "HP_Spectre"
 
 timestamp = time.strftime("%Y-%m-%d-%H-%M-%S")
@@ -29,7 +29,7 @@ def on_mouse_click(x, y, button, pressed):
     if pressed:
         time_curr = time.time()
         global ground_truth
-        ground_truth = ground_truth + "mouse_click,{}\n".format(time_curr - time_start)
+        #ground_truth = ground_truth + "mouse_click,{}\n".format(time_curr - time_start)
 
 def on_mouse_scroll(x, y, dx, dy):
     time_curr = time.time()
@@ -55,8 +55,15 @@ listener.start()
 
 print("Recording started...")
 frames = []
+MAX_BUFFER_SIZE = 256
+buffer = []
 for i in range(0, int(RATE / CHUNK * RECORD_SECONDS)):
     data = stream.read(CHUNK)
+    for i in range(0, len(data) - 2, 2):
+        buffer.append(int.from_bytes(data[i : i + 2], byteorder='little', signed=True))
+        if len(buffer) > MAX_BUFFER_SIZE:
+            buffer.pop(0)
+    # print("Buffer ", buffer)
     frames.append(data)
 
 print("Recording stopped.")

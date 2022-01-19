@@ -1,45 +1,76 @@
 """
-Preprocess time series data for LSTM model.
+Preprocess time series data for LSTM models.
 """
 
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error
-from sklearn.preprocessing import MinMaxScaler
+from sklearn.svm import SVC
 
 from tensorflow.keras.layers import Dense, LSTM
 from tensorflow.keras.models import Sequential
 
 import constants
 
-LOOK_BACK = 5
-PATH_IN = "../features/time_series/key_pairs.csv"
+model_type = "SVM"
+granularity = "finger"
+
+if granularity == "finger":
+    PATH_IN = "../features/time_series/finger_pairs.csv"
+elif granularity == "key":
+    PATH_IN = "../features/time_series/key_pairs_cleaned.csv"
 
 df = pd.read_csv(PATH_IN)
-print(df.head(30))
 
 num_features = 2
-look_back = 3
+look_back = 1
 
 x = np.zeros((len(df) - look_back, look_back, num_features))
 y = np.zeros((len(df) - look_back))
 
 for i in range(len(df) - look_back):
     for j in range(look_back):
-        x[i][j][0] = constants.KEY_MAP.index(df.iloc[i + j, 0].lower()) / len(constants.KEY_MAP)
+        if granularity == "finger":
+            try:
+                x[i][j][0] = constants.FINGERS.index(df.iloc[i + j, 0]) / len(constants.FINGERS)
+            except ValueError:
+                print(df.iloc[i + j, 0])
+        elif granularity == "key":
+            x[i][j][0] = constants.KEY_MAP.index(df.iloc[i + j, 0].lower()) / len(constants.KEY_MAP)
+
         x[i][j][1] = df.iloc[i + j, 2]
-    y[i] = constants.KEY_MAP.index(df.iloc[i + look_back, 0].lower())
+    if granularity == "finger":
+        try:
+            y[i] = constants.FINGERS.index(df.iloc[i + look_back, 0])
+        except ValueError:
+            print (df.iloc[i+look_back, 0])
+    elif granularity == "key":
+        y[i] = constants.KEY_MAP.index(df.iloc[i + look_back, 0].lower())
 
-x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2)
+if model_type == "SVM":
+    print(x.shape)
+    x = x.reshape((len(df) - look_back, -1))
+    print(x.shape)
 
-model = Sequential()
-model.add(LSTM(50, input_shape=(x_train.shape[1], x_train.shape[2])))
-model.add(Dense(1))
-model.compile(loss='mae', optimizer='adam')
-history = model.fit(x_train, y_train, epochs=10, batch_size=72, validation_data=(x_test, y_test), verbose=2, shuffle=False)
+train_test_cutoff = int(0.8 * len(x))
+x_train = x[: train_test_cutoff]
+y_train = y[: train_test_cutoff]
+x_test = x[train_test_cutoff: ]
+y_test = y[train_test_cutoff: ]
+
+if model_type == "RNN":
+    model = Sequential()
+    model.add(LSTM(50, input_shape=(x_train.shape[1], x_train.shape[2])))
+    model.add(Dense(1))
+    model.compile(loss='mae', optimizer='adam')
+    print(model.summary())
+    history = model.fit(x_train, y_train, epochs=10, batch_size=36, validation_data=(x_test, y_test), verbose=2,
+                        shuffle=False)
+elif model_type == "SVM":
+    model = SVC(C=1.0, probability=True)
+    model.fit(x_train, y_train)
 
 y_pred = model.predict(x_test)
 mse = mean_squared_error(y_test, y_pred)
@@ -49,20 +80,41 @@ limit = 10
 
 for i in range(limit):
     print("previous keys and time delays: ")
-    for j in range(len(x_test[i])):
-        prev_key = constants.KEY_MAP[int(round(x_test[i][j][0] * len(constants.KEY_MAP)))]
-        time_delay = x_test[i][j][1]
+    if granularity == "finger":
+        feat_map = constants.FINGER_MAP
+    elif granularity == "key":
+        feat_map = constants.KEY_MAP
 
-        print("previous key ", prev_key)
-        print("time delay ", time_delay)
+    if model_type == "SVM":
+        for j in range(0, len(x_test[i]), 2):
+            prev_key = feat_map[int(round(x_test[i][j] * len(feat_map)))]
+            time_delay = x_test[i][j+1]
 
-    next_key_pred = constants.KEY_MAP[int(round(y_pred[i][0]))]
-    print("next key PREDICTION: ", next_key_pred)
-    next_key_actual = constants.KEY_MAP[int(y_test[i])]
-    print("next key ACTUAL: ", next_key_actual)
-    print("\n\n")
+            print("previous key ", prev_key)
+            print("time delay ", time_delay)
 
-plt.plot(history.history['loss'], label='train')
-plt.plot(history.history['val_loss'], label='test')
-plt.legend()
-plt.show()
+        next_key_pred = feat_map[int(round(y_pred[i]))]
+        print("next {} PREDICTION: ".format(granularity), next_key_pred)
+        next_key_actual = feat_map[int(y_test[i])]
+        print("next {} ACTUAL: ".format(granularity), next_key_actual)
+        print("\n\n")
+
+    elif model_type == "RNN":
+        for j in range(len(x_test[i])):
+            prev_key = feat_map[int(round(x_test[i][j][0] * len(feat_map)))]
+            time_delay = x_test[i][j][1]
+
+            print("previous key ", prev_key)
+            print("time delay ", time_delay)
+
+        next_key_pred = feat_map[int(round(y_pred[i][0]))]
+        print("next {} PREDICTION: ".format(granularity), next_key_pred)
+        next_key_actual = feat_map[int(y_test[i])]
+        print("next {} ACTUAL: ".format(granularity), next_key_actual)
+        print("\n\n")
+
+if model == "RNN":
+    plt.plot(history.history['loss'], label='train')
+    plt.plot(history.history['val_loss'], label='test')
+    plt.legend()
+    plt.show()

@@ -19,17 +19,20 @@ dim = 2
 # Dimensionality reduction algorithm used
 algorithm = "t-SNE"
 
-dir_in = "../features"
+dir_in = "../features/time_series_words/"
 keyboard_type = "HP_Spectre"
 
-input = "push_fft"
+input = "time_delays"
+index_col = "word" # index_col = "key"
 
-df = pd.read_csv(os.path.join(dir_in, keyboard_type, input + ".csv"))
+#df = pd.read_csv(os.path.join(dir_in, keyboard_type, input + ".csv"))
+df = pd.read_csv(os.path.join(dir_in, input + ".csv"))
 print(df.head())
 
 labels = set(df.iloc[:, 0])
+print("labels ", labels)
 # labels = ["mouse_click", "mouse_scroll", "a"]
-df.set_index("key", inplace=True)
+df.set_index(index_col, inplace=True)
 legend = []
 
 if dim == 3:
@@ -47,6 +50,8 @@ for label in labels:
         x = np.array(df.loc[label, cols])
     elif input == "vggish_embeddings":
         x = np.array(df.loc[label])
+    elif input == "time_delays":
+        x = np.array(df.loc[label])
 
     print(label)
     print(x.shape)
@@ -54,7 +59,7 @@ for label in labels:
 
     # First reduce high-dimensional data with PCA before applying TSNE
     x = np.array(df.loc[label, :])
-    x = PCA(n_components=50).fit_transform(x)
+    #x = PCA(n_components=50).fit_transform(x)
 
     if algorithm ==  "PCA":
         x_embedded = PCA(n_components=dim).fit_transform(x)

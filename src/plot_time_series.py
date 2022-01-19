@@ -72,7 +72,7 @@ def get_time_series(key=None, path=DIR_IN, num_samples=44000, entire=False):
 
 def get_fft(audio_samples, sample_rate, timestamps, key, features_file, push_window=50, num_bins=None):
     """
-    Outputs Fourier Transform of raw audio samples to `featuress` directory
+    Outputs Fourier Transform of raw audio samples to `features` directory
 
     :param audio_samples: raw audio samples in time domain
     :param sample_rate: sample rate of raw audio

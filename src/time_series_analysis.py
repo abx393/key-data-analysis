@@ -26,8 +26,11 @@ CENTER = "median"
 
 LIMITED_KEYS = 27
 
-nn_features = open(os.path.join(DIR_OUT, "key_pairs.csv"), 'w')
-nn_features.write("prev_key,curr_key,time_delay\n")
+key_nn_features = open(os.path.join(DIR_OUT, "key_pairs.csv"), 'w')
+key_nn_features.write("prev_key,curr_key,time_delay\n")
+
+finger_nn_features = open(os.path.join(DIR_OUT, "finger_pairs.csv"), 'w')
+finger_nn_features.write("prev_finger,curr_finger,time_delay\n")
 
 time_delay_by_key_pair = [[[] for i in range(len(constants.KEY_MAP))] for j in range(len(constants.KEY_MAP))]
 time_delay_by_finger_pair = [[[] for i in range(len(constants.FINGERS))] for j in range(len(constants.FINGERS))]
@@ -58,18 +61,21 @@ for f in os.listdir(os.path.join(DIR_IN, KEYBOARD)):
                     prev_key_index = constants.KEY_MAP.index(prev_key)
                     curr_key_index = constants.KEY_MAP.index(curr_key)
 
-                    prev_finger_index = constants.FINGERS.index(constants.FINGER_MAP[prev_key_index])
-                    curr_finger_index = constants.FINGERS.index(constants.FINGER_MAP[curr_key_index])
+                    prev_finger = constants.FINGER_MAP[prev_key_index]
+                    curr_finger = constants.FINGER_MAP[curr_key_index]
+
+                    prev_finger_index = constants.FINGERS.index(prev_finger)
+                    curr_finger_index = constants.FINGERS.index(curr_finger)
                 except:
                     print("Key {} or {} not in key map".format(prev_key, curr_key))
 
                 if prev_key != "space" and time_delay < OUTLIER_CUTOFF:
 
                     time_delay_by_key_pair[prev_key_index][curr_key_index].append(time_delay)
-
-                    nn_features.write("{},{},{}\n".format(prev_key, curr_key, time_delay))
+                    key_nn_features.write("{},{},{}\n".format(prev_key, curr_key, time_delay))
 
                     time_delay_by_finger_pair[prev_finger_index][curr_finger_index].append(time_delay)
+                    finger_nn_features.write("{},{},{}\n".format(prev_finger, curr_finger, time_delay))
 
                 prev_time = curr_time
                 prev_key = curr_key
@@ -77,7 +83,8 @@ for f in os.listdir(os.path.join(DIR_IN, KEYBOARD)):
             i += 1
     count+= 1
 
-nn_features.close()
+key_nn_features.close()
+finger_nn_features.close()
 
 # Plot average time delay for all key pairs
 fig, ax = plt.subplots()
@@ -110,14 +117,14 @@ plt.close()
 
 # Plot number of data points for all key pairs
 fig, ax = plt.subplots()
-im = ax.imshow([[len(arr) for arr in arr2] for arr2 in time_delay_by_key_pair], cmap='hot', interpolation='nearest')
+im = ax.imshow([[len(time_delay_by_key_pair[i][j]) for j in range(LIMITED_KEYS)] for i in range(LIMITED_KEYS)])
 for i in range(LIMITED_KEYS):
     for j in range(LIMITED_KEYS):
         text = ax.text(j, i, len(time_delay_by_key_pair[i][j]), ha="center", va="center", color="w")
         text.set_color('black')
         text.set_size(8)
 
-labels = [(constants.FINGER_MAP[i] + "    " + constants.KEY_MAP[i]) for i in range(len(constants.KEY_MAP))]
+labels = [(constants.FINGER_MAP[i] + "    " + constants.KEY_MAP[i]) for i in range(LIMITED_KEYS)]
 ax.set_title("Number of Data Points for Each Key Pair")
 ax.set_xticks(np.arange(LIMITED_KEYS))
 ax.set_xticklabels(labels, rotation='vertical')

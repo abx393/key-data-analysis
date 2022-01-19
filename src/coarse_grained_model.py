@@ -1,5 +1,5 @@
 """
-Builds and trains ML model to classify mouse press, mouse scroll, and key press.
+Builds and trains ML models to classify mouse press, mouse scroll, and key press.
 """
 
 import os

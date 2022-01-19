@@ -10,9 +10,9 @@ from scipy.io import wavfile
 from matplotlib import pyplot as plt
 from json import JSONDecoder
 
-DIR_IN = "native_raw_data"
+DIR_IN = "native_raw_data_time_series"
 DIR_OUT = "plots/fft"
-KEYBOARD_TYPE = "Dell"
+KEYBOARD_TYPE = "HP_Spectre"
 
 offset = 10000
 
@@ -24,7 +24,7 @@ for f in os.listdir(os.path.join(DIR_IN, KEYBOARD_TYPE)):
     if extension == "wav":
         sample_rate, samples = wavfile.read(os.path.join(DIR_IN, KEYBOARD_TYPE, f))
         print(samples)
-        samples = samples[:, 1]
+        #samples = samples[:, 1]
 
         """
         # Get corresponding ground truth JSON file
@@ -57,15 +57,16 @@ for f in os.listdir(os.path.join(DIR_IN, KEYBOARD_TYPE)):
             freq = freq[: n//2]
             magnitude = magnitude[: n//2]
 
-            plt.plot(freq, magnitude)
-            # plt.axis([0, 10000, 0, 300000])
-            plt.xlim([0, 3000])
-            plt.ylim(bottom=0)
-            plt.title("key = {}, time = {} s, keyboard = {}".format(label, timestamp, KEYBOARD_TYPE))
-            plt.xlabel("Frequency (Hz)")
-            plt.ylabel("Amplitude")
-            plt.savefig(os.path.join(DIR_OUT, basename + "_" + label + ".jpg"))
-            plt.show()
+            if label == "space" or label == "a":
+                plt.plot(freq, magnitude)
+                # plt.axis([0, 10000, 0, 300000])
+                plt.xlim([0, 3000])
+                plt.ylim(bottom=0)
+                plt.title("key = {}, time = {} s, keyboard = {}".format(label, timestamp, KEYBOARD_TYPE))
+                plt.xlabel("Frequency (Hz)")
+                plt.ylabel("Amplitude")
+                plt.savefig(os.path.join(DIR_OUT, basename + "_" + label + ".jpg"))
+                plt.show()
 
         labels_file.close()
 

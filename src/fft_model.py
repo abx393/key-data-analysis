@@ -22,12 +22,12 @@ dir_out = "results"
 keyboard_type = "HP_Spectre"
 model = "NN"
 
-df = pd.read_csv(os.path.join(dir_in, keyboard_type, "push_fft.csv"))
+df = pd.read_csv(os.path.join(dir_in, keyboard_type, "push_fft_natural_dataset.csv"))
 value_counts = df["key"].value_counts()
 print(value_counts)
 
 # Save # of data points per class to file
-f_distr = open(os.path.join(dir_out, keyboard_type, "class_distr.csv"), "w")
+f_distr = open(os.path.join(dir_out, keyboard_type, "class_distr_natural_dataset.csv"), "w")
 f_distr.write("Key,Number of Data Points\n")
 for key in value_counts.keys():
     f_distr.write(key + ",")
@@ -46,11 +46,12 @@ x_list = list(x)
 y_list = list(y)
 print(y_list)
 
+"""
 # Manually downsample larger class
 i = 0
 while i < len(x_list):
     rand = np.random.rand() * 10
-    if y_list[i] == 0 and rand < 9:
+    if y_list[i] == 0 and rand < 8:
         x_list.pop(i)
         y_list.pop(i)
     else:
@@ -61,6 +62,7 @@ y = np.array(y_list)
 
 print("counts ", np.count_nonzero(y))
 print("counts ", len(y) - np.count_nonzero(y))
+"""
 
 """
 if model == "SVM":
@@ -97,8 +99,8 @@ elif model == "KMeans":
     clf = KMeans(n_clusters=3)
 
 clf.fit(x_train, y_train)
-dump(clf, 'models/FFT_Classification_space_{}.bin'.format(keyboard_type))
-dump(scaler, 'models/std_scaler_space_{}.bin'.format(keyboard_type), compress=True)
+dump(clf, 'models/FFT_Classification_space_natural_dataset_{}.bin'.format(keyboard_type))
+dump(scaler, 'models/std_scaler_space__natural_dataset_{}.bin'.format(keyboard_type), compress=True)
 
 #print(classes[np.argmax(y_pred, axis=1)])
 #print(lb.inverse_transform(y_pred))

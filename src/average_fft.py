@@ -9,9 +9,9 @@ from scipy.io import wavfile
 from matplotlib import pyplot as plt
 from json import JSONDecoder
 
-DIR_IN = "../web_raw_data"
-DIR_OUT = "../plots/average_fft"
-KEYBOARD_TYPE = "Dell"
+DIR_IN = "web_raw_data"
+DIR_OUT = "plots/average_fft"
+KEYBOARD_TYPE = "HP_Spectre"
 
 offset = 10000
 

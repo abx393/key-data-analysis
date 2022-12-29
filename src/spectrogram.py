@@ -10,7 +10,7 @@ from scipy.signal import spectrogram
 from matplotlib import pyplot as plt
 from json import JSONDecoder
 
-DIR_IN = "native_raw_data"
+DIR_IN = "native_raw_data_time_series_phrases"
 DIR_OUT = "plots/spectrograms"
 KEYBOARD_TYPE = "Dell"
 
@@ -20,7 +20,7 @@ for f in os.listdir(os.path.join(DIR_IN, KEYBOARD_TYPE)):
     # If it's a wav file, process it
     if extension == "wav":
         sample_rate, samples = wavfile.read(os.path.join(DIR_IN, KEYBOARD_TYPE, f))
-        samples = samples[:,1]
+        #samples = samples[:,1]
 
         """
         # Get corresponding ground truth JSON file
@@ -34,7 +34,7 @@ for f in os.listdir(os.path.join(DIR_IN, KEYBOARD_TYPE)):
         labels_file.close()
 
         # Compute spectrogram
-        freqs, times, spec = spectrogram(samples, sample_rate, nperseg=10000)
+        freqs, times, spec = spectrogram(samples, sample_rate, nperseg=1000)
 
         # Plot spectrogram using color map
         plt.pcolormesh(times, freqs, spec, vmin=0, vmax=100)

@@ -17,16 +17,17 @@ from sklearn.decomposition import PCA
 dim = 2
 
 # Dimensionality reduction algorithm used
-algorithm = "t-SNE"
+algorithm = "PCA"
 
-dir_in = "../features/time_series_words/"
+dir_in = "../features/"
 keyboard_type = "HP_Spectre"
 
-input = "time_delays"
-index_col = "word" # index_col = "key"
+input = "push_fft"
+#index_col = "word"
+index_col = "key"
 
 #df = pd.read_csv(os.path.join(dir_in, keyboard_type, input + ".csv"))
-df = pd.read_csv(os.path.join(dir_in, input + ".csv"))
+df = pd.read_csv(os.path.join(dir_in, keyboard_type, input + ".csv"))
 print(df.head())
 
 labels = set(df.iloc[:, 0])

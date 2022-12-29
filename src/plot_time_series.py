@@ -11,9 +11,9 @@ from matplotlib import pyplot as plt
 from scipy.io import wavfile
 from scipy.signal import find_peaks
 
-DIR_IN = "../native_raw_data"
-DIR_OUT = "../features"
-KEYBOARD_TYPE = "Dell"
+DIR_IN = '../native_raw_data'
+DIR_OUT = '../features'
+KEYBOARD_TYPE = 'HP_Spectre'
 
 def get_time_series(key=None, path=DIR_IN, num_samples=44000, entire=False):
     """
@@ -29,10 +29,10 @@ def get_time_series(key=None, path=DIR_IN, num_samples=44000, entire=False):
     res = []
     timestamps = []
     for f in os.listdir(os.path.join(path, KEYBOARD_TYPE)):
-        (basename, extension) = f.split(".")
+        (basename, extension) = f.split('.')
 
         # If it's a wav file, generate fft plot
-        if extension == "wav":
+        if extension == 'wav':
             sample_rate, samples = wavfile.read(os.path.join(path, KEYBOARD_TYPE, f))
             curr_timestamps = []
 
@@ -44,7 +44,7 @@ def get_time_series(key=None, path=DIR_IN, num_samples=44000, entire=False):
                 res.append(samples)
 
             # Get corresponding ground truth CSV file
-            labels_file = open(os.path.join(path, KEYBOARD_TYPE, basename + ".csv"))
+            labels_file = open(os.path.join(path, KEYBOARD_TYPE, basename + '.csv'))
             df = pd.read_csv(labels_file)
             labels_file.close()
             for i in range(len(df)):
@@ -84,7 +84,7 @@ def get_fft(audio_samples, sample_rate, timestamps, key, features_file, push_win
     """
 
     for i in range(audio_samples.shape[0]):
-        plt.title("key =  " + key)
+        plt.title('key =  ' + key)
         t = np.arange(0, audio_samples.shape[1] / sample_rate, 1.0 / sample_rate)
 
         # We define the touch peak as the first peak over height 500 in the time series
@@ -94,11 +94,11 @@ def get_fft(audio_samples, sample_rate, timestamps, key, features_file, push_win
             continue
         """
         if len(peaks) >= 3:
-            ax.text(t[peaks[0]], 2000, "push", fontsize=12)
-            ax.text(t[peaks[len(peaks) - 3]], 2000, "release", fontsize=12)
+            ax.text(t[peaks[0]], 2000, 'push', fontsize=12)
+            ax.text(t[peaks[len(peaks) - 3]], 2000, 'release', fontsize=12)
 
         for peak in peaks:
-            ax.text(t[peak] - 0.001, res[i][peak] - 40, "o")
+            ax.text(t[peak] - 0.001, res[i][peak] - 40, 'o')
         """
 
         # The push peak region is defined such that the touch peak is at 1/8 of the push region length
@@ -126,30 +126,28 @@ def get_fft(audio_samples, sample_rate, timestamps, key, features_file, push_win
         freq = freq[: num_bins]
         magnitude = magnitude[: num_bins]
         if len(freq) < num_bins:
-            print("freq len is ", len(freq))
-            print("skipping...")
+            print('freq len is ', len(freq))
+            print('skipping...')
             continue
 
         if i == 0:
-            np.save(os.path.join(DIR_OUT, KEYBOARD_TYPE, "freq_bins_metadata.npy"), freq)
+            np.save(os.path.join(DIR_OUT, KEYBOARD_TYPE, 'freq_bins_metadata.npy'), freq)
         features_file.write(key)
         for j in range(num_bins):
             features_file.write("," + str(magnitude[j]))
-        features_file.write("\n")
+        features_file.write('\n')
 
-        """
-        if key == "q":
+        if key == 'a':
             #plt.plot(touch_t, touch_samples)
-            #plt.xlabel("Frequency (Hz)")
-            #plt.ylabel("Amplitude")
-            #plt.plot(freq, magnitude)
-            plt.plot(t, res[i])
-            plt.show()
-        """
+            plt.xlabel('Frequency (Hz)')
+            plt.ylabel('Magnitude')
+            plt.plot(freq, magnitude)
+            #plt.plot(t, res[i])
+            #plt.show()
 
 def get_touch_time_series(res, sample_rate, timestamps, key, features_file, push_window=None, num_bins=None, num_samples=None):
     for i in range(res.shape[0]):
-        plt.title("key =  " + key)
+        plt.title('key =  ' + key)
         t = np.arange(0, res.shape[1] / sample_rate, 1.0 / sample_rate)
         peaks, props = find_peaks(res[i], height=500, distance=sample_rate/500)
         ax = plt.gca()
@@ -157,11 +155,11 @@ def get_touch_time_series(res, sample_rate, timestamps, key, features_file, push
             continue
         """
         if len(peaks) >= 3:
-            ax.text(t[peaks[0]], 2000, "push", fontsize=12)
-            ax.text(t[peaks[len(peaks) - 3]], 2000, "release", fontsize=12)
+            ax.text(t[peaks[0]], 2000, 'push', fontsize=12)
+            ax.text(t[peaks[len(peaks) - 3]], 2000, 'release', fontsize=12)
 
         for peak in peaks:
-            ax.text(t[peak] - 0.001, res[i][peak] - 40, "o")
+            ax.text(t[peak] - 0.001, res[i][peak] - 40, 'o')
         """
 
         # We define the touch peak as the first peak over height 500 in the time series
@@ -173,33 +171,33 @@ def get_touch_time_series(res, sample_rate, timestamps, key, features_file, push
         touch_t = t[start : end]
 
         if len(touch_samples) < num_samples - 1:
-            print("touch samples is ", len(touch_samples))
-            print("skipping...")
+            print('touch samples is ', len(touch_samples))
+            print('skipping...')
             continue
 
         if i == 0:
-            np.save(os.path.join(DIR_OUT, KEYBOARD_TYPE, "time_samples_metadata.npy"), touch_t)
+            np.save(os.path.join(DIR_OUT, KEYBOARD_TYPE, 'time_samples_metadata.npy'), touch_t)
         features_file.write(key)
         for sample in touch_samples:
-            features_file.write("," + str(sample))
-        features_file.write("\n")
+            features_file.write(',' + str(sample))
+        features_file.write('\n')
 
         """
-        if key == "a":
+        if key == 'a':
             #plt.plot(touch_t, touch_samples)
             #plt.plot(freq, magnitude)
             plt.plot(t, res[i])
             plt.show()
         """
 
-if __name__ == "__main__":
+if __name__ == '__main__':
 
-    keys = ["space", "backspace", "a", "d", "f", "s", "e", "q", "w", "r", "g"]
+    keys = ['space', 'backspace', 'a', 'd', 'f', 's', 'e', 'q', 'w', 'r', 'g']
 
     # push peak time window length in milliseconds
-    if KEYBOARD_TYPE == "HP_Spectre":
+    if KEYBOARD_TYPE == 'HP_Spectre':
         push_window = 50
-    elif KEYBOARD_TYPE == "Dell":
+    elif KEYBOARD_TYPE == 'Dell':
         push_window = 50
     else:
         push_window = 50
@@ -210,15 +208,15 @@ if __name__ == "__main__":
     # Number of frequency bins we store
     num_bins = int(push_window * fs / 1000 * max_freq / fs)
     num_samples = int(push_window * fs / 1000)
-    print("num_bins ", num_bins)
-    print("num_samples ", num_samples)
+    print('num_bins ', num_bins)
+    print('num_samples ', num_samples)
 
-    features_file = open(os.path.join(DIR_OUT, KEYBOARD_TYPE, "push_fft.csv"), 'w')
-    features_file.write("key")
+    features_file = open(os.path.join(DIR_OUT, KEYBOARD_TYPE, 'push_fft.csv'), 'w')
+    features_file.write('key')
 
     for i in range(num_bins):
-        features_file.write(",freq_bin_" + str(i + 1))
-    features_file.write("\n")
+        features_file.write(',freq_bin_' + str(i + 1))
+    features_file.write('\n')
 
     """
     for i in range(num_samples - 1):
@@ -229,7 +227,7 @@ if __name__ == "__main__":
     for key in keys:
         audio_samples, sample_rate, timestamps = get_time_series(key=key, num_samples=35000, entire=False)
         if sample_rate != fs:
-            raise ValueError("sample_rate != " + fs)
+            raise ValueError('sample_rate != ' + fs)
 
         get_fft(audio_samples, sample_rate, timestamps, key, features_file, push_window=push_window, num_bins=num_bins)
 

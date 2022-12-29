@@ -6,6 +6,8 @@ signal of their typing.
 
 Some approaches tested involve exploiting patterns in time delays between consecutive key presses, others involve 
 exploiting the frequency spectrum of the sound of each keystroke, and some involve a combination of the two.
+I also experiment with character-level prediction versus identification of word-delimiting characters and then
+performing word-level prediction.
 
 I show decent results for clean, noise-free datasets but haven't been able to show good results for in-the-wild data.
 
@@ -18,6 +20,7 @@ on average (except possibly when the key pair is the same *key* twice).
 Each cell in the following colormap represents the average time delay in seconds for some finger pair:
 ![](features/time_series/finger_pair_avg_time_delay.png)
 
+I use a Support Vector Machine (SVM) to predict keys based on observed time delay information.
 
 ### Frequency Spectrum of Sound of KeyStrokes
 
@@ -30,6 +33,8 @@ the audio samples in the time window representing the entire keystroke.
 2. We can apply the DFT on each of several consecutive smaller time windows that cover the entire keystroke. This 
 produces a spectrogram. It preserves some time-varying information over the duration of a keystroke.
 ![](assets/spectrogram_diagram.PNG)
+
+For both of the above methods, I use a Neural Network to predict keys based on the observed frequency spectrum.
 
 ## Data Collection
 

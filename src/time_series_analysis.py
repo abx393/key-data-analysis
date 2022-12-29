@@ -112,6 +112,7 @@ ax.set_yticks(np.arange(LIMITED_KEYS))
 ax.set_yticklabels(labels)
 
 #fig.tight_layout()
+plt.savefig(os.path.join(DIR_OUT, 'key_pairs_avg_time_delay.png'))
 plt.show()
 plt.close()
 
@@ -159,6 +160,7 @@ ax.set_yticks(np.arange(len(constants.FINGERS)))
 ax.set_yticklabels(labels)
 
 fig.tight_layout()
+plt.savefig(os.path.join(DIR_OUT, 'finger_pair_avg_time_delay.png'))
 plt.show()
 
 # Plot number of data points for all finger pairs

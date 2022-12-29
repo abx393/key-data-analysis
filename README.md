@@ -21,6 +21,7 @@ experiments, a hypothetical attack would occur through a separate recording devi
 than the one receiving typed input:
 * Recording audio through smartphone of people typing in public spaces, like offices or libraries.
 <img src="assets/phone_recording_diagram.PNG" width="500" height="200">
+
 * Smart home devices passively recording audio may identify what you type on your laptop.
 <img src="assets/smart_home_recording_diagram.PNG" width="600" height="200">
 

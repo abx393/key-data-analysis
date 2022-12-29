@@ -21,6 +21,15 @@ Each cell in the following colormap represents the average time delay in seconds
 
 ### Frequency Spectrum of Sound of KeyStrokes
 
+To find the frequency spectrum of each keystroke's sound, we need to segment each keystroke in the time domain and
+convert this region of the signal to the frequency domain. 
+1. We can apply a single Discrete Fourier Transform (DFT) on
+the audio samples in the time window representing the entire keystroke. 
+![](assets/dft_diagram.PNG)
+
+2. We can apply the DFT on each of several consecutive smaller time windows that cover the entire keystroke. This 
+produces a spectrogram. It preserves some time-varying information over the duration of a keystroke.
+![](assets/spectrogram_diagram.PNG)
 
 ## Data Collection
 

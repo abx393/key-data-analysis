@@ -22,6 +22,6 @@ than the one receiving typed input:
 * Recording audio through smartphone of people typing in public spaces, like offices or libraries.
 ![](assets/phone_recording_diagram.PNG)
 * Smart home devices passively recording audio may identify what you type on your laptop.
-![](assets/smart_speaker_recording_diagram.PNG)
+![](assets/smart_home_recording_diagram.PNG)
 
  
